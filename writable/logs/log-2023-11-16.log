@@ -1,0 +1,145 @@
+INFO - 2023-11-16 01:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-16 01:28:58 --> Invalid file: "Myth\Auth\Views\_message_block.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Myth\\Auth\\Views\\_message_block.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Myth\\Auth\\Views\\_message_block', [], true)
+ 3 APPPATH\Views\auth\register.php(11): view('Myth\\Auth\\Views\\_message_block')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\auth\\register.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('auth/register', [], true)
+ 7 APPPATH\Controllers\Auth.php(14): view('auth/register')
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Auth->registrasi()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\project-ppdb-online\\public\\index.php')
+CRITICAL - 2023-11-16 01:30:25 --> Invalid file: "Myth\Auth\Views\_message_block.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Myth\\Auth\\Views\\_message_block.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Myth\\Auth\\Views\\_message_block', [], true)
+ 3 APPPATH\Views\auth\register.php(11): view('Myth\\Auth\\Views\\_message_block')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\auth\\register.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('auth/register', [], true)
+ 7 APPPATH\Controllers\Auth.php(14): view('auth/register')
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Auth->register()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\project-ppdb-online\\public\\index.php')
+CRITICAL - 2023-11-16 01:30:26 --> Invalid file: "Myth\Auth\Views\_message_block.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Myth\\Auth\\Views\\_message_block.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Myth\\Auth\\Views\\_message_block', [], true)
+ 3 APPPATH\Views\auth\register.php(11): view('Myth\\Auth\\Views\\_message_block')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\auth\\register.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('auth/register', [], true)
+ 7 APPPATH\Controllers\Auth.php(14): view('auth/register')
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Auth->register()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\project-ppdb-online\\public\\index.php')
+CRITICAL - 2023-11-16 01:30:26 --> Invalid file: "Myth\Auth\Views\_message_block.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Myth\\Auth\\Views\\_message_block.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Myth\\Auth\\Views\\_message_block', [], true)
+ 3 APPPATH\Views\auth\register.php(11): view('Myth\\Auth\\Views\\_message_block')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\auth\\register.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('auth/register', [], true)
+ 7 APPPATH\Controllers\Auth.php(14): view('auth/register')
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Auth->register()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\project-ppdb-online\\public\\index.php')
+CRITICAL - 2023-11-16 01:31:16 --> Invalid file: "Myth\Auth\Views\_message_block.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Myth\\Auth\\Views\\_message_block.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Myth\\Auth\\Views\\_message_block', [], true)
+ 3 APPPATH\Views\auth\register.php(11): view('Myth\\Auth\\Views\\_message_block')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\auth\\register.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('auth/register', [], true)
+ 7 APPPATH\Controllers\Auth.php(11): view('auth/register')
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Auth->register()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\project-ppdb-online\\public\\index.php')
+CRITICAL - 2023-11-16 01:45:32 --> Undefined variable $isi
+in APPPATH\Views\layout\content.php on line 2.
+ 1 APPPATH\Views\layout\content.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $isi', 'C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\layout\\content.php', 2)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\layout\\content.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('layout/content', [], true)
+ 5 APPPATH\Views\layout\wrapper.php(5): view('layout/content')
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\layout\\wrapper.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('layout/wrapper', [], true)
+ 9 APPPATH\Controllers\Home.php(12): view('layout/wrapper')
+10 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+11 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-16 01:47:22 --> Invalid file: "home.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('home', [], true)
+ 3 APPPATH\Views\layout\content.php(3): view('home')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\layout\\content.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('layout/content', [], true)
+ 7 APPPATH\Views\layout\wrapper.php(5): view('layout/content')
+ 8 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\layout\\wrapper.php')
+ 9 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('layout/wrapper', [], true)
+11 APPPATH\Controllers\Home.php(12): view('layout/wrapper', [...])
+12 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+13 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+14 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-16 01:49:22 --> Invalid file: "login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Views\layout\content.php(3): view('login')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\layout\\content.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('layout/content', [], true)
+ 7 APPPATH\Views\layout\wrapper.php(5): view('layout/content')
+ 8 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\layout\\wrapper.php')
+ 9 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('layout/wrapper', [], true)
+11 APPPATH\Controllers\Home.php(12): view('layout/wrapper', [...])
+12 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+13 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+14 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-16 01:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 01:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 01:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-16 01:57:52 --> Invalid file: "Myth\Auth\Views\_message_block.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Myth\\Auth\\Views\\_message_block.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('Myth\\Auth\\Views\\_message_block', [], true)
+ 3 APPPATH\Views\auth\register.php(11): view('Myth\\Auth\\Views\\_message_block')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\project-ppdb-online\\app\\Views\\auth\\register.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('auth/register', [], true)
+ 7 APPPATH\Controllers\Auth.php(14): view('auth/register')
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Auth->register()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-16 01:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 01:59:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 01:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 01:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 02:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 02:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 02:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 02:04:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-16 02:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
