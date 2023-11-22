@@ -2,7 +2,6 @@
 <?= $this->section('content') ?>
 
 <div class="login-box">
-  <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
       <h1><b>Masuk</b></h1>

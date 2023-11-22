@@ -6,10 +6,10 @@
     <div class="card-header text-center">
       <h1><b>Registrasi</b></h1>
     </div>
-    <?php 
-    $errors=session()->getFlashdata('errors'); ?>
     <div class="card-body">
-    <?php if (! empty($errors)): ?>
+    <?php 
+    $errors = session()->getFlashdata('errors'); 
+    if (! empty($errors)): ?>
     <div class="alert alert-danger" role="alert">
         <ul>
         <?php foreach ($errors as $error): ?>
