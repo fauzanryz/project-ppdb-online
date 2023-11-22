@@ -24,6 +24,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'filterauth' => \App\Filters\FilterAuth::class,
     ];
 
     /**
@@ -35,11 +36,20 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
+            'filterauth' => ['except' => [
+                'auth', 'auth/*',
+                'home', 'home/*',
+                '/'
+            ]],
+            
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
+            'filterauth' => ['except' => [
+                'dashboard', 'dashboard/*',
+            ]],
             'toolbar',
             // 'honeypot',
             // 'secureheaders',

@@ -6,9 +6,8 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        $data = array('title' => 'Home', 
-                        'isi' => 'home'
-                    );
-        return view('layout/wrapper', $data);
+        $data = array('title' => 'Home');
+        return view('freeUser/index', $data);
     }
+
 }

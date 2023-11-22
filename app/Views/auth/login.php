@@ -1,6 +1,7 @@
-<?= $this->extend('auth/templates/index') ?>
+<?= $this->extend('templates/index') ?>
 <?= $this->section('content') ?>
 
+<body class="hold-transition login-page">
 <div class="login-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
@@ -18,12 +19,13 @@
         </ul>
     </div>
     <?php endif ?>
-    <?php if(session()->getFlashdata('pesan')){
+    <?php 
+    if (session()->getFlashdata('pesan')){
       echo '<div class="alert alert-danger" role="alert">';
       echo session()->getFlashdata('pesan');
       echo '</div>';
     } ?>
-      <form action="/auth/cekLogin">
+      <form action="/checkLogin" method="post">
         <div class="input-group mb-3">
           <input type="email" name="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
@@ -48,7 +50,7 @@
         </div>
       </form>
         <div class="social-auth-links text-center mt-2 mb-3">
-          <a href="#" class="btn btn-block btn-success">
+          <a href="<?= base_url('register') ?>" class="btn btn-block btn-success">
             Belum Punya Akun ?
         </a>
       </div>

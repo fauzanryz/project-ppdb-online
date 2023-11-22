@@ -11,3 +11,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/register', 'Auth::register');
 $routes->get('/login', 'Auth::login');
 $routes->post('/saveRegister', 'Auth::saveRegister');
+$routes->post('/checkLogin', 'Auth::checkLogin');
+$routes->get('/logout', 'Auth::logout');
+
+$routes->get('/dashboard', 'Home::dashboard');

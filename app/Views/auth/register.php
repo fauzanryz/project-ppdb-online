@@ -1,6 +1,7 @@
-<?= $this->extend('auth/templates/index') ?>
+<?= $this->extend('templates/index') ?>
 <?= $this->section('content') ?>
 
+<body class="hold-transition login-page">
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
@@ -68,7 +69,7 @@
       </form>
 
       <div class="social-auth-links text-center mt-2 mb-3">
-          <a href="<?= url_to('login') ?>" class="btn btn-block btn-primary">
+          <a href="<?= base_url('login') ?>" class="btn btn-block btn-primary">
             Sudah Punya Akun ? Masuk
         </a>
       </div>
