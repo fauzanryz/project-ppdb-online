@@ -14,4 +14,4 @@ $routes->post('/saveRegister', 'Auth::saveRegister');
 $routes->post('/checkLogin', 'Auth::checkLogin');
 $routes->get('/logout', 'Auth::logout');
 
-$routes->get('/dashboard', 'Home::dashboard');
+$routes->get('/dashboard', 'Dashboard::index');

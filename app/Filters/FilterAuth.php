@@ -27,7 +27,7 @@ class FilterAuth implements FilterInterface
     {
         if(session()->get('log') != true){
             session()->setFlashdata('pesan', 'Login terlebih dahulu!');
-            return redirect()->to(base_url());
+            return redirect()->to(base_url('login'));
         }
     }
 
@@ -46,7 +46,7 @@ class FilterAuth implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         if(session()->get('log') == true){
-            return redirect()->to(base_url());
+            return redirect()->to(base_url('dashboard'));
         }
     }
 }
