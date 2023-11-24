@@ -22,31 +22,35 @@ class Auth extends BaseController
         if($this->validate([
             'email'=>[
                 'label'=>'Email',
-                'rules'=>'required|max_length[50]',
+                'rules'=>'required|max_length[100]|valid_email|is_unique[user.email]',
                 'errors' => [
-                    'required' => '{field} wajib diisi',
+                    'required' => '{field} Tidak Boleh Kosong',
+                    'valid_email' => '{field} Tidak Valid',
+                    'is_unique' => '{field} Sudah Terdaftar',
                 ],
             ],
             'username'=>[
                 'label'=>'Username',
-                'rules'=>'required|max_length[30]',
+                'rules'=>'required|max_length[100]|alpha_numeric|is_unique[user.username]',
                 'errors' => [
-                    'required' => '{field} wajib diisi',
+                    'required' => '{field} Tidak Boleh Kosong',
+                    'alpha_numeric' => 'Hanya karakter alfanumerik yang diperbolehkan pada {field}',
+                    'is_unique' => '{field} Sudah Terdaftar',
                 ],
             ],
             'password'=>[
                 'label'=>'Password',
-                'rules'=>'required|max_length[255]',
+                'rules'=>'required|max_length[100]',
                 'errors' => [
-                    'required' => '{field} wajib diisi',
+                    'required' => '{field} Tidak Boleh Kosong',
                 ],
             ],
             'repassword'=>[
                 'label'=>'Password',
-                'rules'=>'required|max_length[255]|matches[password]',
+                'rules'=>'required|max_length[100]|matches[password]',
                 'errors' => [
-                    'required' => '{field} wajib diisi',
-                    'matches' => '{field} tidak sama',
+                    'required' => '{field} Tidak Boleh Kosong',
+                    'matches' => '{field} Tidak Cocok',
                 ],
             ],
         ])){
@@ -54,17 +58,17 @@ class Auth extends BaseController
             $data = array(
                 'email' => htmlspecialchars($this->request->getPost('email')),
                 'username' => htmlspecialchars($this->request->getPost('username')),
-                'password' => password_hash($this->request->getPost('password'),PASSWORD_BCRYPT),
-                'foto' => 'profil.jpg',
-                'level' => 2
+                'password' => password_hash($this->request->getPost('password'), PASSWORD_BCRYPT),
+                'foto' => 'default.png',
+                'level' => 2,
             );
             $this->ModelAuth->saveRegister($data);
             session()->setFlashdata('pesan', 'Registrasi Berhasil!');
-            return redirect()->to(base_url('register'));
+            return redirect()->to(base_url('/login'));
         }else{
             // Jika tidak berhasil ditambahkan
             session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('register'));
+            return redirect()->to(base_url('/register'));
         }
     }
 
@@ -79,14 +83,14 @@ class Auth extends BaseController
                 'label'=>'Email',
                 'rules'=>'required|max_length[50]',
                 'errors' => [
-                    'required' => '{field} wajib diisi',
+                    'required' => '{field} Tidak Boleh Kosong',
                 ],
             ],
             'password'=>[
                 'label'=>'Password',
                 'rules'=>'required|max_length[255]',
                 'errors' => [
-                    'required' => '{field} wajib diisi',
+                    'required' => '{field} Tidak Boleh Kosong',
                 ],
             ],
         ])){
@@ -102,16 +106,16 @@ class Auth extends BaseController
                 session()->set('foto', $check['foto']);
                 session()->set('level', $check['level']);
 
-                return redirect()->to(base_url('dashboard'));
+                return redirect()->to(base_url('/dashboard'));
             }else{
                 // Jika Datanya Tidak Ada
-                session()->setFlashdata('pesan', 'Username atau Password tidak cocok!');
-                return redirect()->to(base_url('login'));
+                session()->setFlashdata('pesan', 'Username atau Password Tidak Cocok!');
+                return redirect()->to(base_url('/login'));
             }
         }else{
             // Jika Data Tidak Valid
             session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('login'));
+            return redirect()->to(base_url('/login'));
         }
     }
 
@@ -122,7 +126,7 @@ class Auth extends BaseController
         session()->remove('foto');
         session()->remove('level');
         session()->setFlashdata('pesan', 'Berhasil keluar!');
-        return redirect()->to(base_url('login'));
+        return redirect()->to(base_url('/'));
     }
 
 

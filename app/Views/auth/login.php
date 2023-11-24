@@ -21,7 +21,7 @@
     <?php endif ?>
     <?php 
     if (session()->getFlashdata('pesan')){
-      echo '<div class="alert alert-danger" role="alert">';
+      echo '<div class="alert alert-success" role="alert">';
       echo session()->getFlashdata('pesan');
       echo '</div>';
     } ?>
