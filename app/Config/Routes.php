@@ -16,3 +16,6 @@ $routes->get('/logout', 'Auth::logout');
 
 // Routes Dashboard
 $routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/dashboard/admin', 'Admin::index');
+$routes->get('/dashboard/calonsiswa', 'CalonSiswa::index');
+

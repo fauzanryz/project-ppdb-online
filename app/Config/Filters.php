@@ -24,7 +24,8 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'filterauth' => \App\Filters\FilterAuth::class,
+        'filteradmin' => \App\Filters\FilterAdmin::class,
+        'filtercalonsiswa' => \App\Filters\FilterCalonSiswa::class,
     ];
 
     /**
@@ -36,7 +37,11 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
-            'filterauth' => ['except' => [
+            'filteradmin' => ['except' => [
+                '/', 'login', 'checkLogin',
+                'register', 'saveRegister',
+            ]],
+            'filtercalonsiswa' => ['except' => [
                 '/', 'login', 'checkLogin',
                 'register', 'saveRegister',
             ]],
@@ -46,8 +51,13 @@ class Filters extends BaseConfig
             // 'invalidchars',
         ],
         'after' => [
-            'filterauth' => ['except' => [
-                'dashboard', 'dashboard/*',
+            'filteradmin' => ['except' => [
+                'dashboard', 
+                'dashboard/admin', 'dashboard/admin/*',
+            ]],
+            'filtercalonsiswa' => ['except' => [
+                'dashboard', 
+                'dashboard/calonsiswa', 'dashboard/calonsiswa/*',
             ]],
             'toolbar',
             // 'honeypot',
