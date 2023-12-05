@@ -10,14 +10,18 @@ class ModelAuth extends Model
         $this->db->table('user')->insert($data);
     }
 
-    public function login($email, $password){
-        $user = $this->db->table('user')->where('email', $email)->get()->getRowArray();
+    public function login($identity, $password)
+    {
+        $user = $this->db->table('user')
+                        ->where('email', $identity)
+                        ->orWhere('username', $identity)
+                        ->get()
+                        ->getRowArray();
         if ($user && password_verify($password, $user['password'])) {
             return $user;
         } else {
             return false;
         }
     }
-
 
 }

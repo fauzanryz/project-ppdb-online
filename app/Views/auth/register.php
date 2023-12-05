@@ -28,6 +28,7 @@
     ?>
 
     <form action="/saveRegister" method="post">
+    <?= csrf_field(); ?>
         <div class="input-group mb-3">
           <input type="email" class="form-control" name="email" placeholder="Email" value="<?= old('email') ?>">
           <div class="input-group-append">

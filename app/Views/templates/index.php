@@ -13,6 +13,16 @@
   <link rel="stylesheet" href="<?= base_url(); ?>/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url(); ?>/AdminLTE/dist/css/adminlte.min.css">
+  <style>
+    .alert-danger ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .alert-danger li {
+        margin-left: 1.25em;
+    }
+</style>
 </head>
 
 <?= $this->renderSection('content') ?>

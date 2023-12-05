@@ -1,0 +1,10 @@
+__ci_last_regenerate|i:1701359351;_ci_previous_url|s:40:"http://localhost:8080/kelolaUser/edit/16";log|b:1;email|s:15:"admin@gmail.com";username|s:5:"admin";foto|s:11:"default.png";level|s:1:"1";errors|s:269:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>Email Sudah Terdaftar</li>
+					<li>Username Sudah Terdaftar</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:3:{s:6:"errors";s:3:"old";s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:4:{s:14:"csrf_test_name";s:32:"223b1119f7f74416fa72e95001a64a62";s:5:"email";s:11:"d@gmail.com";s:8:"username";s:1:"d";s:8:"password";s:60:"$2y$10$4tQJTeryphdYDVN0xXQv8e12dAm1c0P42dkkbEAqHFzEn0i3PrfrC";}}_ci_validation_errors|a:2:{s:5:"email";s:21:"Email Sudah Terdaftar";s:8:"username";s:24:"Username Sudah Terdaftar";}

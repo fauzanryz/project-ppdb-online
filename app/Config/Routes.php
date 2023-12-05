@@ -19,3 +19,13 @@ $routes->get('/dashboard', 'Dashboard::index');
 $routes->get('/dashboard/admin', 'Admin::index');
 $routes->get('/dashboard/calonsiswa', 'CalonSiswa::index');
 
+
+//Routes Kelola User 
+$routes->get('/kelolaUser', 'User::index');
+$routes->get('/kelolaUser/formTambahUser', 'User::formTambahUser');
+$routes->post('/kelolaUser/tambahUser', 'User::tambahUser');
+$routes->delete('/kelolaUser/hapus/(:num)', 'User::hapusUser/$1');
+$routes->get('/kelolaUser/edit/(:num)', 'User::editUser/$1');
+$routes->post('/kelolaUser/updateUser/(:num)', 'User::updateUser/$1');
+// $routes->get('/kelolaUser/detail/(:any)', 'User::detailUser/$1');
+

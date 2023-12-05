@@ -26,8 +26,9 @@
       echo '</div>';
     } ?>
       <form action="/checkLogin" method="post">
+      <?= csrf_field(); ?>
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Email">
+          <input type="text" name="username-email" class="form-control" placeholder="Username atau Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>

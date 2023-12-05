@@ -52,11 +52,12 @@ class Filters extends BaseConfig
         ],
         'after' => [
             'filteradmin' => ['except' => [
-                'dashboard', 
+                '/', 'dashboard', 
                 'dashboard/admin', 'dashboard/admin/*',
+                'kelolaUser', 'kelolaUser/*',
             ]],
             'filtercalonsiswa' => ['except' => [
-                'dashboard', 
+                '/', 'dashboard', 
                 'dashboard/calonsiswa', 'dashboard/calonsiswa/*',
             ]],
             'toolbar',

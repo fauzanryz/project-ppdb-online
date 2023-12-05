@@ -7,6 +7,8 @@ use App\Models\ModelAuth;
 
 class Auth extends BaseController
 {
+    protected $ModelAuth;
+
     public function __construct(){
         $this->ModelAuth = new ModelAuth();
     }
@@ -79,9 +81,9 @@ class Auth extends BaseController
 
     public function checkLogin(){
         if($this->validate([
-            'email'=>[
-                'label'=>'Email',
-                'rules'=>'required|max_length[50]',
+            'username-email' => [
+                'label' => 'Username atau Email',
+                'rules' => 'required|max_length[50]',
                 'errors' => [
                     'required' => '{field} Tidak Boleh Kosong',
                 ],
@@ -95,9 +97,9 @@ class Auth extends BaseController
             ],
         ])){
             // Jika Data Valid
-            $email = $this->request->getPost('email');
+            $identity = $this->request->getPost('username-email');
             $password = $this->request->getPost('password');
-            $check = $this->ModelAuth->login($email, $password);
+            $check = $this->ModelAuth->login($identity, $password);
             if($check){
                 // Jika Datanya Ada
                 session()->set('log', true);
@@ -126,7 +128,7 @@ class Auth extends BaseController
         session()->remove('foto');
         session()->remove('level');
         session()->setFlashdata('pesan', 'Berhasil keluar!');
-        return redirect()->to(base_url('/'));
+        return redirect()->to(base_url('/login'));
     }
 
 
