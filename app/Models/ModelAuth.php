@@ -6,6 +6,15 @@ use CodeIgniter\Model;
 
 class ModelAuth extends Model
 {
+    protected $table            = 'user';
+    protected $primaryKey       = 'idUser';
+    protected $allowedFields    = [
+        'email',
+        'username',
+        'password',
+        'foto',
+        'level'
+    ];
     public function saveRegister($data){
         $this->db->table('user')->insert($data);
     }

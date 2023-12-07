@@ -97,7 +97,7 @@ class Auth extends BaseController
             ],
         ])){
             // Jika Data Valid
-            $identity = $this->request->getPost('username-email');
+            $identity = htmlspecialchars($this->request->getPost('username-email'));
             $password = $this->request->getPost('password');
             $check = $this->ModelAuth->login($identity, $password);
             if($check){

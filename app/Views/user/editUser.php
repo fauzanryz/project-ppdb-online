@@ -38,15 +38,15 @@
 						</div>
 					</div>
 
-					<div class="form-group mt-2 mb-3">
-						<label for="exampleInputFile">Foto </label>
-						<div class="input-group">
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="exampleInputFile" name="foto">
-								<label class="custom-file-label" for="exampleInputFile"></label>
-							</div>
-						</div>
-					</div>
+                    <div class="form-group mt-2 mb-3">
+                        <label for="exampleInputFile">Foto</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="exampleInputFile" name="foto" onchange="updateFileName()">
+                                <label class="custom-file-label" for="exampleInputFile"><?= $user['foto'] ?? 'Pilih file'; ?></label>
+                            </div>
+                        </div>
+                    </div>
 
 					<button type="submit" class="btn btn-primary">Simpan Data</button>
 					<a href="<?= base_url('/kelolaUser') ?>" class="btn btn-danger">Kembali</a>
@@ -71,7 +71,7 @@
         updateFileName();
     });
 
-    // Execute the function on input file change
+    // Execute the function on input file change (additional)
     document.getElementById('exampleInputFile').addEventListener('change', updateFileName);
 </script>
 

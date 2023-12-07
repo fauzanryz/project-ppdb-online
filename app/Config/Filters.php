@@ -52,9 +52,12 @@ class Filters extends BaseConfig
         ],
         'after' => [
             'filteradmin' => ['except' => [
-                '/', 'dashboard', 
-                'dashboard/admin', 'dashboard/admin/*',
+                '/', 'dashboard/',
                 'kelolaUser', 'kelolaUser/*',
+                'pendaftarMasuk', 'pendaftarMasuk/*',
+                'pendaftarDiterima', 'pendaftarDiterima/*',
+                'pendaftarDitolak', 'pendaftarDitolak/*',
+                'pendaftarBaru', 'pendaftarBaru/*',
             ]],
             'filtercalonsiswa' => ['except' => [
                 '/', 'dashboard', 

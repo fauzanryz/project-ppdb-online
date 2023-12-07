@@ -5,10 +5,10 @@
         <div class="container-fluid">
             <div class="row">
             <div class="col" >
-            <h1>Data User</h1>
+            <h1>Data Pendaftar Masuk</h1>
             </div>
             <?php if (session()->get('level') == 1) : ?>
-                    <a href="/kelolaUser/formTambahUser" class="btn btn-primary mb-4"><i class="fas fa-plus-circle mr-2" ></i>Tambah Data</a>
+                    <a href="/pendaftarMasuk/formTambahPendaftar" class="btn btn-primary mb-4"><i class="fas fa-plus-circle mr-2" ></i>Tambah Data</a>
                     <?php endif; ?>
             </div><!-- /.container-fluid -->
         </section>
@@ -27,25 +27,30 @@
                     <thead style="text-align: center;">
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Username</th>
-                            <th scope="col">Foto</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Tempat Lahir</th>
+                            <th scope="col">Tanggal Lahir</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody style="text-align: center;">
                         <?php $no = 1 ?>
-                        <?php foreach ($user as $usr) : ?>
+                        <?php foreach ($pendaftar as $dftr) : ?>
                             <tr>
                                 <th><?= $no++; ?></th>
-                                <td><?= $usr['email']; ?></td>
-                                <td><?= $usr['username']; ?></td>
-                                <td><?= $usr['foto']; ?></td>
+                                <td><?= $dftr['nama']; ?></td>
+                                <td><?= $dftr['jenisKel']; ?></td>
+                                <td><?= $dftr['tempatLahir']; ?></td>
+                                <td><?= $dftr['tanggalLahir']; ?></td>
+                                <td><?= $dftr['status_daftar']; ?></td>
                                 <td>
                                     <?php if (session()->get('level') == 1) : ?>
-                                        <a href="<?= base_url('/kelolaUser/edit/' . '/' . $usr['idUser']); ?>" class="btn btn-warning"><i class="fas fa-pen-alt" style="color: #ffffff;"></i></a>
+								        <a href="<?= base_url('/pendaftarMasuk/detail' . '/' . $dftr['idPendaftar']) ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                                        <a href="<?= base_url('/pendaftarMasuk/edit/' . '/' . $dftr['idPendaftar']); ?>" class="btn btn-warning"><i class="fas fa-pen-alt" style="color: #ffffff;"></i></a>
 
-                                        <form action="<?= base_url('/kelolaUser/hapus' . '/' . $usr['idUser']); ?>" class="d-inline" method="POST">
+                                        <form action="<?= base_url('/pendaftarMasuk/hapus' . '/' . $dftr['idPendaftar']); ?>" class="d-inline" method="POST">
                                             <?= csrf_field(); ?>
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>

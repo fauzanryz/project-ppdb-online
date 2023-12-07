@@ -25,4 +25,14 @@ class ModelUser extends Model
         return $this->where(['idUser' => $idUser, 'level' => 2])->first();
     }
 
+    public function checkEmailExists($email)
+    {
+        return $this->where('email', $email)->countAllResults() > 0;
+    }
+
+    public function checkUsernameExists($username)
+    {
+        return $this->where('username', $username)->countAllResults() > 0;
+    }
+
 }
