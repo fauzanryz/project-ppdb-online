@@ -154,8 +154,9 @@ class DataPendaftar extends Migration
                 'null' => true,
             ]
         ]);
-            $this->forge->addPrimaryKey('idPendaftar');
-            $this->forge->createTable('data_pendaftar');
+        $this->forge->addPrimaryKey('idPendaftar');
+        $this->forge->createTable('data_pendaftar');
+        $this->forge->addForeignKey('idUser', 'user', 'idUser', 'CASCADE', 'CASCADE', 'idUser');
     }
 
     public function down()

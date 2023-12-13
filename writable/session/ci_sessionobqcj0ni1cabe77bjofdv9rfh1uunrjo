@@ -1,0 +1,12 @@
+__ci_last_regenerate|i:1702435806;_ci_previous_url|s:44:"http://localhost:8080/pendaftarMasuk/edit/28";log|b:1;email|s:15:"admin@gmail.com";username|s:5:"admin";foto|s:11:"default.png";level|s:1:"1";errors|s:382:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>File yang diupload bukan pdf !!!</li>
+					<li>File yang diupload bukan pdf !!!</li>
+					<li>File yang diupload bukan pdf !!!</li>
+					<li>File yang diupload bukan pdf !!!</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:3:{s:6:"errors";s:3:"old";s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:30:{s:14:"csrf_test_name";s:32:"ae53a0fca4e6a12e74d60edfd26676d5";s:4:"nama";s:1:"a";s:8:"jenisKel";s:9:"Perempuan";s:11:"tempatLahir";s:1:"a";s:12:"tanggalLahir";s:10:"2010-11-30";s:4:"nisn";s:1:"a";s:3:"nik";s:1:"a";s:6:"anakKe";s:1:"a";s:13:"jumlahSaudara";s:1:"a";s:6:"alamat";s:1:"a";s:6:"noTelp";s:1:"a";s:11:"sekolahAsal";s:1:"a";s:8:"namaAyah";s:1:"a";s:7:"namaIbu";s:1:"a";s:13:"pekerjaanAyah";s:1:"a";s:12:"pekerjaanIbu";s:1:"a";s:7:"nikAyah";s:1:"a";s:6:"nikIbu";s:1:"a";s:15:"penghasilanOrtu";s:2:"aa";s:9:"agamaOrtu";s:1:"a";s:10:"alamatOrtu";s:1:"a";s:10:"pendidikan";s:1:"a";s:8:"namaWali";s:1:"a";s:13:"pekerjaanWali";s:1:"a";s:9:"agamaWali";s:1:"a";s:10:"alamatWali";s:1:"a";s:13:"siswaPindahan";s:0:"";s:11:"suratPindah";s:0:"";s:15:"diterimaDiKelas";s:0:"";s:13:"status_daftar";s:10:"Finalisasi";}}_ci_validation_errors|a:4:{s:7:"pasfoto";s:32:"File yang diupload bukan pdf !!!";s:13:"aktaKelahiran";s:32:"File yang diupload bukan pdf !!!";s:2:"KK";s:32:"File yang diupload bukan pdf !!!";s:8:"ijazahSD";s:32:"File yang diupload bukan pdf !!!";}

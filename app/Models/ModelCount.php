@@ -15,5 +15,13 @@ class ModelCount extends Model
     {
         return $this->db->table('data_pendaftar')->where('status_daftar', 'Diterima')->countAllResults();
     }
-    
+
+    public function countPendaftarLakiLaki()
+    {
+        return $this->db->table('data_pendaftar')->where('jenisKel', 'Laki-laki')->countAllResults();
+    }
+    public function countPendaftarPerempuan()
+    {
+        return $this->db->table('data_pendaftar')->where('jenisKel', 'Perempuan')->countAllResults();
+    }
 }

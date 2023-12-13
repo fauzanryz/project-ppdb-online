@@ -45,7 +45,7 @@ class Filters extends BaseConfig
                 '/', 'login', 'checkLogin',
                 'register', 'saveRegister',
             ]],
-            
+
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
@@ -57,10 +57,10 @@ class Filters extends BaseConfig
                 'pendaftarMasuk', 'pendaftarMasuk/*',
                 'pendaftarDiterima', 'pendaftarDiterima/*',
                 'pendaftarDitolak', 'pendaftarDitolak/*',
-                'pendaftarBaru', 'pendaftarBaru/*',
+                'semuaPendaftar', 'semuaPendaftar/*',
             ]],
             'filtercalonsiswa' => ['except' => [
-                '/', 'dashboard', 
+                '/', 'dashboard',
                 'dashboard/calonsiswa', 'dashboard/calonsiswa/*',
             ]],
             'toolbar',

@@ -10,20 +10,18 @@ class ModelPendaftar extends Model
     protected $primaryKey       = 'idPendaftar';
     protected $allowedFields    = [
         'nama', 'jenisKel', 'tempatLahir', 'tanggalLahir', 'nisn', 'nik', 'anakKe', 'jumlahSaudara', 'alamat',
-        'noTelp', 'sekolahAsal', 'namaAyah', 'namaIbu', 'pekerjaanAyah' ,'pekerjaanIbu', 'nikAyah', 'nikIbu', 
-        'penghasilanOrtu', 'agamaOrtu', 'alamatOrtu', 'pendidikan', 'namaWali', 'pekerjaanWali', 'agamaWali', 
-        'alamatWali', 'siswaPindahan', 'suratPindah', 'diterimaDiKelas', 'status_daftar', 'pasFoto', 
-        'aktaKelahiran', 'ijazahSD', 'idUser'
-        
+        'noTelp', 'sekolahAsal', 'namaAyah', 'namaIbu', 'pekerjaanAyah', 'pekerjaanIbu', 'nikAyah', 'nikIbu',
+        'penghasilanOrtu', 'agamaOrtu', 'alamatOrtu', 'pendidikan', 'namaWali', 'pekerjaanWali', 'agamaWali',
+        'alamatWali', 'siswaPindahan', 'suratPindah', 'diterimaDiKelas', 'status_daftar', 'pasfoto',
+        'aktaKelahiran', 'KK', 'ijazahSD', 'idUser'
     ];
 
     public function getPendaftar($idPendaftar = false)
     {
         if ($idPendaftar == false) {
-            return $this->findAll();
+            return $this->join('user', 'user.idUser = data_pendaftar.idUser')->findAll();
         }
-
-        return $this->where(['idPendaftar' => $idPendaftar])->first();
+        return $this->where(['idPendaftar' => $idPendaftar])->join('user', 'user.idUser = data_pendaftar.idUser')->first();
     }
 
     public function getPendaftarDiterima()
@@ -34,8 +32,8 @@ class ModelPendaftar extends Model
     {
         return $this->where('status_daftar', 'Ditolak')->findAll();
     }
-    public function getPendaftarBaru()
+    public function getPendaftarFinalisasi()
     {
-        return $this->where('status_daftar', 'Baru')->findAll();
+        return $this->where('status_daftar', 'Finalisasi')->findAll();
     }
 }

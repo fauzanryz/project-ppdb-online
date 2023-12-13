@@ -41,17 +41,29 @@ $routes->get('/pendaftarMasuk/detail/(:any)', 'Pendaftar::detailPendaftar/$1');
 
 
 // Router Pendaftar Diterima
-$routes->get('/pendaftarDiterima', 'Pendaftar::pendaftarDiterima');
-$routes->get('/pendaftarDitolak', 'Pendaftar::pendaftarDitolak');
-$routes->get('/pendaftarBaru', 'Pendaftar::pendaftarBaru');
-
-
-$routes->get('/pendaftarDiterima/formTambahPendaftar', 'Pendaftar::formTambahPendaftar');
-$routes->post('/pendaftarDiterima/tambahPendaftar', 'Pendaftar::tambahPendaftar');
-$routes->delete('/pendaftarDiterima/hapus/(:num)', 'Pendaftar::hapusPendaftar/$1');
-$routes->get('/pendaftarDiterima/edit/(:num)', 'Pendaftar::editPendaftar/$1');
-$routes->post('/pendaftarDiterima/updatePendaftar/(:num)', 'Pendaftar::updatePendaftar/$1');
-$routes->get('/pendaftarDiterima/detail/(:any)', 'Pendaftar::detailPendaftar/$1');
+$routes->get('/pendaftarDiterima', 'PendaftarDiterima::index');
+$routes->get('/pendaftarDiterima/detail/(:any)', 'PendaftarDiterima::detailPendaftarDiterima/$1');
+$routes->delete('/pendaftarDiterima/hapus/(:num)', 'PendaftarDiterima::hapusPendaftarDiterima/$1');
 
 
 
+
+// Router Pendaftar Ditolak
+$routes->get('/pendaftarDitolak', 'PendaftarDitolak::index');
+$routes->get('/pendaftarDitolak/detail/(:any)', 'PendaftarDitolak::detailPendaftarDitolak/$1');
+$routes->delete('/pendaftarDitolak/hapus/(:num)', 'PendaftarDitolak::hapusPendaftarDitolak/$1');
+
+
+
+// Router Semua Pendaftar
+$routes->get('/semuaPendaftar', 'semuaPendaftar::index');
+$routes->get('/semuaPendaftar/detail/(:any)', 'semuaPendaftar::detailSemuaPendaftar/$1');
+$routes->delete('/semuaPendaftar/hapus/(:num)', 'semuaPendaftar::hapusSemuaPendaftar/$1');
+
+
+// $routes->get('/pendaftarDiterima/formTambahPendaftar', 'Pendaftar::formTambahPendaftar');
+// $routes->post('/pendaftarDiterima/tambahPendaftar', 'Pendaftar::tambahPendaftar');
+// $routes->delete('/pendaftarDiterima/hapus/(:num)', 'Pendaftar::hapusPendaftar/$1');
+// $routes->get('/pendaftarDiterima/edit/(:num)', 'Pendaftar::editPendaftar/$1');
+// $routes->post('/pendaftarDiterima/updatePendaftar/(:num)', 'Pendaftar::updatePendaftar/$1');
+// $routes->get('/pendaftarDiterima/detail/(:any)', 'Pendaftar::detailPendaftar/$1');
