@@ -58,10 +58,13 @@ class Filters extends BaseConfig
                 'pendaftarDiterima', 'pendaftarDiterima/*',
                 'pendaftarDitolak', 'pendaftarDitolak/*',
                 'semuaPendaftar', 'semuaPendaftar/*',
+                'banner', 'banner/*',
+                'profil', 'profil/*'
             ]],
             'filtercalonsiswa' => ['except' => [
                 '/', 'dashboard',
-                'dashboard/calonsiswa', 'dashboard/calonsiswa/*',
+                'biodata', 'biodata/*',
+                'biodata/tambahBiodata',
             ]],
             'toolbar',
             // 'honeypot',

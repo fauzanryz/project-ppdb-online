@@ -37,31 +37,31 @@ class User extends BaseController
     public function tambahUser()
     {
         $validate = $this->validate([
-            'email'=>[
-                'label'=>'Email',
-                'rules'=>'required|max_length[100]|valid_email|is_unique[user.email]',
+            'email' => [
+                'label' => 'Email',
+                'rules' => 'required|max_length[100]|valid_email|is_unique[user.email]',
                 'errors' => [
                     'required' => '{field} Tidak Boleh Kosong',
                     'valid_email' => '{field} Tidak Valid',
                     'is_unique' => '{field} Sudah Terdaftar',
                 ],
             ],
-            'username'=>[
-                'label'=>'Username',
-                'rules'=>'required|max_length[100]|alpha_numeric|is_unique[user.username]',
+            'username' => [
+                'label' => 'Username',
+                'rules' => 'required|max_length[100]|alpha_numeric|is_unique[user.username]',
                 'errors' => [
                     'required' => '{field} Tidak Boleh Kosong',
                     'alpha_numeric' => 'Hanya karakter alfanumerik yang diperbolehkan pada {field}',
                     'is_unique' => '{field} Sudah Terdaftar',
                 ],
             ],
-            'password'=>[
-                'label'=>'Password',
-                'rules'=>'required|max_length[100]',
+            'password' => [
+                'label' => 'Password',
+                'rules' => 'required|max_length[100]',
                 'errors' => [
                     'required' => '{field} Tidak Boleh Kosong',
                 ],
-            ], 
+            ],
             'foto' => [
                 'label' => 'Foto',
                 'rules' => 'is_image[foto]|max_size[foto,2048]|mime_in[foto,image/jpg,image/png,image/jpeg]',
@@ -84,8 +84,8 @@ class User extends BaseController
 
         if ($validate) {
             $this->ModelUser->insert([
-                'email' => htmlspecialchars($this->request->getVar('email')) ,
-                'username' => htmlspecialchars($this->request->getVar('username')),
+                'email' => esc($this->request->getVar('email')),
+                'username' => esc($this->request->getVar('username')),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
                 'foto' => $namaFoto,
                 'level' => 2,
@@ -117,122 +117,121 @@ class User extends BaseController
     }
 
     public function updateUser($idUser)
-{
-    $user = $this->ModelUser->getUser($idUser);
+    {
+        $user = $this->ModelUser->getUser($idUser);
 
-    if (isset($user['email'])) {
-        $newEmail = $this->request->getVar('email');
-        $newUsername = $this->request->getVar('username');
-        $newPassword = $this->request->getVar('password');
-        $fileFoto = $this->request->getFile('foto');
+        if (isset($user['email'])) {
+            $newEmail = $this->request->getVar('email');
+            $newUsername = $this->request->getVar('username');
+            $newPassword = $this->request->getVar('password');
+            $fileFoto = $this->request->getFile('foto');
 
-        // Check if email is changed
-        if ($user['email'] == $newEmail) {
-            $ruleEmail = 'required';
-        } else {
-            // Validate new email and check for uniqueness
-            $ruleEmail = 'required';
-            $emailExists = $this->ModelUser->checkEmailExists($newEmail);
-
-            if ($emailExists) {
-                return redirect()->back()->withInput()->with('error', 'Email sudah terdaftar');
-            }
-        }
-        // Check if username is changed
-        if ($user['username'] == $newUsername) {
-            $ruleUsername = 'required';
-        } else {
-            // Validate new username and check for uniqueness
-            $ruleUsername = 'required';
-            $usernameExists = $this->ModelUser->checkUsernameExists($newUsername);
-
-            if ($usernameExists) {
-                return redirect()->back()->withInput()->with('error', 'Username sudah terdaftar');
-            }
-        }
-        // Check if new password is provided
-        $rulePassword = 'max_length[100]'; // atau aturan validasi lainnya sesuai kebutuhan
-        if (!empty($newPassword)) {
-            $rulePassword = 'required|' . $rulePassword;
-        }
-
-        $validate = $this->validate([
-            'email'=>[
-                'label'=>'Email',
-                'rules'=> $ruleEmail,
-                'errors' => [
-                    'required' => '{field} Tidak Boleh Kosong',
-                    'valid_email' => '{field} Tidak Valid',
-                    'is_unique' => '{field} Sudah Terdaftar',
-                ],
-            ],
-            'username'=>[
-                'label'=>'Username',
-                'rules'=> $ruleUsername,
-                'errors' => [
-                    'required' => '{field} Tidak Boleh Kosong',
-                    'alpha_numeric' => 'Hanya karakter alfanumerik yang diperbolehkan pada {field}',
-                    'is_unique' => '{field} Sudah Terdaftar',
-                ],
-            ],
-            'password'=>[
-                'label'=>'Password',
-                'rules'=> $rulePassword,
-                'errors' => [
-                    'required' => '{field} Tidak Boleh Kosong',
-                    'matches' => 'Konfirmasi password tidak sesuai',
-                ],
-            ], 
-            'foto' => [
-                'label' => 'Foto',
-                'rules' => 'is_image[foto]|max_size[foto,2048]|mime_in[foto,image/jpg,image/png,image/jpeg]',
-                'errors' => [
-                    'max_size' => 'Ukuran foto terlalu besar',
-                    'is_image' => 'File yang diupload bukan foto',
-                    'mime_in' => 'File yang diupload harus berformat (JPG/JPEG/PNG)'
-                ]
-            ],
-        ]);
-
-        if ($validate) {
-            // Check if new photo is uploaded
-            if ($fileFoto->getError() == 4) {
-                $namaFoto = $user['foto'];
+            // Check if email is changed
+            if ($user['email'] == $newEmail) {
+                $ruleEmail = 'required';
             } else {
-                // Delete the old photo
-                if ($user['foto'] != 'default.png') {
-                    unlink('img/' . $user['foto']);
+                // Validate new email and check for uniqueness
+                $ruleEmail = 'required';
+                $emailExists = $this->ModelUser->checkEmailExists($newEmail);
+
+                if ($emailExists) {
+                    return redirect()->back()->withInput()->with('error', 'Email sudah terdaftar');
                 }
-                // Upload the new photo
-                $namaFoto = $fileFoto->getRandomName();
-                $fileFoto->move('img', $namaFoto);
             }
+            // Check if username is changed
+            if ($user['username'] == $newUsername) {
+                $ruleUsername = 'required';
+            } else {
+                // Validate new username and check for uniqueness
+                $ruleUsername = 'required';
+                $usernameExists = $this->ModelUser->checkUsernameExists($newUsername);
 
-            // Save the data
-            $dataToSave = [
-                'idUser' => $idUser,
-                'email' => htmlspecialchars($newEmail),
-                'username' => htmlspecialchars($newUsername),
-                'foto' => $namaFoto,
-                'level' => 2,
-            ];
-
-            // Save new password only if provided
+                if ($usernameExists) {
+                    return redirect()->back()->withInput()->with('error', 'Username sudah terdaftar');
+                }
+            }
+            // Check if new password is provided
+            $rulePassword = 'max_length[100]';
             if (!empty($newPassword)) {
-                $dataToSave['password'] = password_hash($newPassword, PASSWORD_BCRYPT);
+                $rulePassword = 'required|' . $rulePassword;
             }
 
-            $this->ModelUser->save($dataToSave);
+            $validate = $this->validate([
+                'email' => [
+                    'label' => 'Email',
+                    'rules' => $ruleEmail,
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                        'valid_email' => '{field} Tidak Valid',
+                        'is_unique' => '{field} Sudah Terdaftar',
+                    ],
+                ],
+                'username' => [
+                    'label' => 'Username',
+                    'rules' => $ruleUsername,
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                        'alpha_numeric' => 'Hanya karakter alfanumerik yang diperbolehkan pada {field}',
+                        'is_unique' => '{field} Sudah Terdaftar',
+                    ],
+                ],
+                'password' => [
+                    'label' => 'Password',
+                    'rules' => $rulePassword,
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                        'matches' => 'Konfirmasi password tidak sesuai',
+                    ],
+                ],
+                'foto' => [
+                    'label' => 'Foto',
+                    'rules' => 'is_image[foto]|max_size[foto,2048]|mime_in[foto,image/jpg,image/png,image/jpeg]',
+                    'errors' => [
+                        'max_size' => 'Ukuran foto terlalu besar',
+                        'is_image' => 'File yang diupload bukan foto',
+                        'mime_in' => 'File yang diupload harus berformat (JPG/JPEG/PNG)'
+                    ]
+                ],
+            ]);
 
-            session()->setFlashdata('pesan', 'Data Berhasil Diubah');
-            return redirect()->to(base_url('/kelolaUser'));
+            if ($validate) {
+                // Check if new photo is uploaded
+                if ($fileFoto->getError() == 4) {
+                    $namaFoto = $user['foto'];
+                } else {
+                    // Delete the old photo
+                    if ($user['foto'] != 'default.png') {
+                        unlink('img/' . $user['foto']);
+                    }
+                    // Upload the new photo
+                    $namaFoto = $fileFoto->getRandomName();
+                    $fileFoto->move('img', $namaFoto);
+                }
+
+                // Save the data
+                $dataToSave = [
+                    'idUser' => $idUser,
+                    'email' => esc($newEmail),
+                    'username' => esc($newUsername),
+                    'foto' => $namaFoto,
+                    'level' => 2,
+                ];
+
+                // Save new password only if provided
+                if (!empty($newPassword)) {
+                    $dataToSave['password'] = password_hash($newPassword, PASSWORD_BCRYPT);
+                }
+
+                $this->ModelUser->save($dataToSave);
+
+                session()->setFlashdata('pesan', 'Data Berhasil Diubah');
+                return redirect()->to(base_url('/kelolaUser'));
+            } else {
+                session()->setFlashdata('errors', $this->validator->listErrors());
+                return redirect()->back()->withInput();
+            }
         } else {
-            session()->setFlashdata('errors', $this->validator->listErrors());
-            return redirect()->back()->withInput();
+            return redirect()->back()->withInput()->with('errors', 'Data pengguna tidak ditemukan');
         }
-    } else {
-        return redirect()->back()->withInput()->with('errors', 'Data pengguna tidak ditemukan');
     }
-}
-
 }

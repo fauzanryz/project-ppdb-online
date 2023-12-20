@@ -36,4 +36,10 @@ class ModelPendaftar extends Model
     {
         return $this->where('status_daftar', 'Finalisasi')->findAll();
     }
+    public function getPendaftarById($idUser = false)
+    {
+        if (!$idUser) return false;
+
+        return $this->where('data_pendaftar.idUser', $idUser)->first();
+    }
 }

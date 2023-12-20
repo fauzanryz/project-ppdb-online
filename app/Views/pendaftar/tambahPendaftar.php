@@ -5,7 +5,6 @@
 	<div class="container-fluid">
 		<div class="col p-0 mb-3" style="display: flex; justify-content: space-between; align-items: center;">
 			<h1>Tambah Data Pendaftar</h1>
-			<span style="color: red;">* Wajib Diisi</span>
 		</div>
 		<div class="card card-primary">
 			<div class="card-body">
@@ -27,21 +26,21 @@
 							<div class="col-lg-11">
 								<h9 class="font-weight-bold" style="color: green;">A. Calon Siswa</h9>
 							</div>
-							<div class="col-lg-1 text-right">
-								<h9>1/4</h9>
+							<div class="col- text-right" style="color: red;">
+								<h9>*Wajib Diisi</h9>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">Nama Lengkap</label>
 								<span style="color: red;">*</span>
-								<input type="text" name="nama" class="form-control" autocomplete="off" value="<?= old('nama'); ?>" required data-section="1">
+								<input type="text" name="nama" class="form-control" autocomplete="off" value="<?= old('nama'); ?>" required">
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">Jenis Kelamin </label>
 								<span style="color: red;">*</span>
-								<select name="jenisKel" id="inputState" class="form-control" required data-section="1">
+								<select name="jenisKel" id="inputState" class="form-control" required>
 									<option disabled selected>--Pilih Jenis Kelamin--</option>
 									<option value="Laki-laki">Laki-laki</option>
 									<option value="Perempuan">Perempuan</option>
@@ -52,182 +51,188 @@
 							<div class="col">
 								<label class="col-form-label">Tempat Lahir</label>
 								<span style="color: red;">*</span>
-								<input type="text" name="tempatLahir" class="form-control" autocomplete="off" value="<?= old('tempatLahir'); ?>" required data-section="1">
+								<input type="text" name="tempatLahir" class="form-control" autocomplete="off" value="<?= old('tempatLahir'); ?>" required>
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">Tanggal Lahir </label>
 								<span style="color: red;">*</span>
-								<input type="date" name="tanggalLahir" class="form-control" max="<?= date('Y-m-d', strtotime('-13 years')); ?>" required data-section="1" min="<?= date('Y-m-d', strtotime('-15 years')); ?>" required data-section="1">
+								<input type="date" name="tanggalLahir" class="form-control" max="<?= date('Y-m-d', strtotime('-13 years')); ?>" required min="<?= date('Y-m-d', strtotime('-15 years')); ?>" required>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">NISN</label>
 								<span style="color: red;">*</span>
-								<input type="text" name="nisn" class="form-control" autocomplete="off" value="<?= old('nisn'); ?>" required data-section="1">
+								<input type="text" name="nisn" class="form-control" autocomplete="off" value="<?= old('nisn'); ?>" required>
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">NIK </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="nik" class="form-control" min=0 autocomplete="off" value="<?= old('nik'); ?>" required data-section="1">
+								<input type="text" name="nik" class="form-control" min=0 autocomplete="off" value="<?= old('nik'); ?>" required>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
-								<label class="col-form-label">Anak Ke (Gunakan Angka)</label>
+								<label class="col-form-label">Anak Ke </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="anakKe" class="form-control" autocomplete="off" value="<?= old('anakKe'); ?>" required data-section="1">
+								<input type="number" name="anakKe" class="form-control" autocomplete="off" value="<?= old('anakKe'); ?>" required>
 							</div>
 
 							<div class="col">
-								<label class="col-form-label">Jumlah Saudara (Gunakan Angka)</label>
+								<label class="col-form-label">Jumlah Saudara </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="jumlahSaudara" class="form-control" min=0 autocomplete="off" value="<?= old('jumlahSaudara'); ?>" required data-section="1">
+								<input type="number" name="jumlahSaudara" class="form-control" min=0 autocomplete="off" value="<?= old('jumlahSaudara'); ?>" required>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">Alamat </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="alamat" class="form-control" autocomplete="off" value="<?= old('alamat'); ?>" required data-section="1">
+								<input type="text" name="alamat" class="form-control" autocomplete="off" value="<?= old('alamat'); ?>" required>
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">No Telepon</label>
 								<span style="color: red;">*</span>
-								<input type="text" name="noTelp" class="form-control" min=0 autocomplete="off" value="<?= old('noTelp'); ?>" required data-section="1">
+								<input type="text" name="noTelp" class="form-control" min=0 autocomplete="off" value="<?= old('noTelp'); ?>" required>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">Sekolah Asal</label>
 								<span style="color: red;">*</span>
-								<input type="text" name="sekolahAsal" class="form-control" autocomplete="off" value="<?= old('sekolahAsal'); ?>" required data-section="1">
+								<input type="text" name="sekolahAsal" class="form-control" autocomplete="off" value="<?= old('sekolahAsal'); ?>" required>
 							</div>
 						</div>
-						<button type="button" class="btn btn-success text-white mr-auto mt-3" onclick="nextSection(1)">Berikutnya</button>
 
 					</div>
 					<!-- End Form Section -->
 
 
 					<!-- Data Ortu -->
-					<div class="form-section" id="section2">
+					<div class="form-section mt-4" id="section2">
 						<div class="row mb-3">
 							<div class="col-lg-11">
 								<h9 class="font-weight-bold" style="color: green;">B. Orang Tua</h9>
-							</div>
-							<div class="col-lg-1 text-right">
-								<h9>2/4</h9>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">Nama Ayah</label>
 								<span style="color: red;">*</span>
-								<input type="text" name="namaAyah" class="form-control" autocomplete="off" value="<?= old('namaAyah'); ?>" required data-section="2">
+								<input type="text" name="namaAyah" class="form-control" autocomplete="off" value="<?= old('namaAyah'); ?>" required>
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">Nama Ibu </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="namaIbu" class="form-control" min=0 autocomplete="off" value="<?= old('namaIbu'); ?>" required data-section="2">
+								<input type="text" name="namaIbu" class="form-control" min=0 autocomplete="off" value="<?= old('namaIbu'); ?>" required>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">Pekerjaan Ayah</label>
 								<span style="color: red;">*</span>
-								<input type="text" name="pekerjaanAyah" class="form-control" autocomplete="off" value="<?= old('pekerjaanAyah'); ?>" required data-section="2">
+								<input type="text" name="pekerjaanAyah" class="form-control" autocomplete="off" value="<?= old('pekerjaanAyah'); ?>" required>
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">Pekerjaan Ibu </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="pekerjaanIbu" class="form-control" min=0 autocomplete="off" value="<?= old('pekerjaanIbu'); ?>" required data-section="2">
+								<input type="text" name="pekerjaanIbu" class="form-control" min=0 autocomplete="off" value="<?= old('pekerjaanIbu'); ?>" required>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">NIK Ayah</label>
 								<span style="color: red;">*</span>
-								<input type="text" name="nikAyah" class="form-control" autocomplete="off" value="<?= old('nikAyah'); ?>" required data-section="2">
+								<input type="text" name="nikAyah" class="form-control" autocomplete="off" value="<?= old('nikAyah'); ?>" required>
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">NIK Ibu </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="nikIbu" class="form-control" min=0 autocomplete="off" value="<?= old('nikIbu'); ?>" required data-section="2">
+								<input type="text" name="nikIbu" class="form-control" min=0 autocomplete="off" value="<?= old('nikIbu'); ?>" required>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
-								<label class="col-form-label">Penghasilan Ortu (contoh: 1000000)</label>
+								<label class="col-form-label">Penghasilan Orang Tua (contoh: 1000000)</label>
 								<span style="color: red;">*</span>
-								<input type="text" name="penghasilanOrtu" class="form-control" autocomplete="off" value="<?= old('penghasilanOrtu'); ?>" required data-section="2">
+								<input type="text" name="penghasilanOrtu" class="form-control" autocomplete="off" value="<?= old('penghasilanOrtu'); ?>" required>
 							</div>
 
 							<div class="col">
-								<label class="col-form-label">Agama Ortu </label>
+								<label class="col-form-label">Agama Orang Tua </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="agamaOrtu" class="form-control" min=0 autocomplete="off" value="<?= old('agamaOrtu'); ?>" required data-section="2">
+								<select name="agamaOrtu" id="inputState" class="form-control" required>
+									<option disabled selected>--Pilih Agama--</option>
+									<option value="Islam">Islam</option>
+									<option value="Kristen">Kristen</option>
+									<option value="Katolik">Katolik</option>
+									<option value="Hindu">Hindu</option>
+									<option value="Buddha">Buddha</option>
+									<option value="Konghucu">Konghucu</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
-								<label class="col-form-label">Alamat Ortu</label>
+								<label class="col-form-label">Alamat Orang Tua </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="alamatOrtu" class="form-control" autocomplete="off" value="<?= old('alamatOrtu'); ?>" required data-section="2">
+								<input type="text" name="alamatOrtu" class="form-control" autocomplete="off" value="<?= old('alamatOrtu'); ?>" required>
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">Pendidikan </label>
 								<span style="color: red;">*</span>
-								<input type="text" name="pendidikan" class="form-control" min=0 autocomplete="off" value="<?= old('pendidikan'); ?>" required data-section="2">
+								<select name="pendidikan" id="inputState" class="form-control" required>
+									<option disabled selected>--Pilih Pendidikan--</option>
+									<option value="SD/MI">SD/MI</option>
+									<option value="SMP/MTS">SMP/MTS</option>
+									<option value="SMA/SMK">SMA/SMK</option>
+									<option value="D1">D1</option>
+									<option value="D2">D2</option>
+									<option value="D3">D3</option>
+									<option value="D4/S1">D4/S1</option>
+									<option value="S2">S2</option>
+									<option value="S3">S3</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">Nama Wali</label>
-								<span style="color: red;">*</span>
-								<input type="text" name="namaWali" class="form-control" autocomplete="off" value="<?= old('namaWali'); ?>" required data-section="2">
+								<input type="text" name="namaWali" class="form-control" autocomplete="off" value="<?= old('namaWali'); ?>">
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">Pekerjaan Wali </label>
-								<span style="color: red;">*</span>
-								<input type="text" name="pekerjaanWali" class="form-control" min=0 autocomplete="off" value="<?= old('pekerjaanWali'); ?>" required data-section="2">
+								<input type="text" name="pekerjaanWali" class="form-control" min=0 autocomplete="off" value="<?= old('pekerjaanWali'); ?>">
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">Agama Wali</label>
-								<span style="color: red;">*</span>
-								<input type="text" name="agamaWali" class="form-control" autocomplete="off" value="<?= old('agamaWali'); ?>" required data-section="2">
+								<input type="text" name="agamaWali" class="form-control" autocomplete="off" value="<?= old('agamaWali'); ?>">
 							</div>
 
 							<div class="col">
 								<label class="col-form-label">Alamat Wali </label>
-								<span style="color: red;">*</span>
-								<input type="text" name="alamatWali" class="form-control" min=0 autocomplete="off" value="<?= old('alamatWali'); ?>" required data-section="2">
+								<input type="text" name="alamatWali" class="form-control" min=0 autocomplete="off" value="<?= old('alamatWali'); ?>">
 							</div>
 						</div>
-						<button type="button" class="btn btn-info text-white mt-3" onclick="previousSection(2)">Sebelumnya</button>
-						<button type="button" class="btn btn-success text-white mr-auto mt-3" onclick="nextSection(2)">Berikutnya</button>
 					</div>
 					<!-- End Form Section -->
 
 
 					<!-- Lain-Lain -->
-					<div class="form-section" id="section3">
+					<div class="form-section mt-4" id="section3">
 						<div class="row mb-3">
 							<div class="col-lg-11">
 								<h9 class="font-weight-bold" style="color: green;">C. Lain-lain</h9>
-							</div>
-							<div class="col-lg-1 text-right">
-								<h9>3/4</h9>
 							</div>
 						</div>
 						<div class="form-row">
@@ -264,20 +269,15 @@
 								</select>
 							</div>
 						</div>
-						<button type="button" class="btn btn-info text-white mt-3" onclick="previousSection(3)">Sebelumnya</button>
-						<button type="button" class="btn btn-success text-white mr-auto mt-3" onclick="nextSection(3)">Berikutnya</button>
 					</div>
 					<!-- End Form section -->
 
 
 					<!-- Lampiran -->
-					<div class="form-section" id="section4">
+					<div class="form-section mt-4" id="section4">
 						<div class="row mb-3">
 							<div class="col-lg-11">
 								<h9 class="font-weight-bold" style="color: green;">D. Lampiran</h9>
-							</div>
-							<div class="col-lg-1 text-right">
-								<h9>4/4</h9>
 							</div>
 						</div>
 						<div class="form-row" style="display: flex; justify-content: space-between; align-items: center;">
@@ -285,7 +285,7 @@
 								<label for="exampleInputFile">Pas Foto (Harap unggah dokumen dengan format pdf)</label>
 								<span style="color: red;">*</span>
 								<div class="custom-file">
-									<input type="file" class="custom-file-input" id="exampleInputFilePasFoto" name="pasfoto" onchange="updateFileName('exampleInputFilePasFoto', 'fileLabelPasFoto')" required data-section="4">
+									<input type="file" class="custom-file-input" id="exampleInputFilePasFoto" name="pasfoto" onchange="updateFileName('exampleInputFilePasFoto', 'fileLabelPasFoto')" required>
 									<label class="custom-file-label" id="fileLabelPasFoto" for="exampleInputFilePasFoto"></label>
 								</div>
 							</div>
@@ -294,7 +294,7 @@
 								<label for="exampleInputFile">Akta Kelahiran (Harap unggah dokumen dengan format pdf)</label>
 								<span style="color: red;">*</span>
 								<div class="custom-file">
-									<input type="file" class="custom-file-input" id="exampleInputFileAkta" name="aktaKelahiran" onchange="updateFileName('exampleInputFileAkta', 'fileLabelAkta')" required data-section="4">
+									<input type="file" class="custom-file-input" id="exampleInputFileAkta" name="aktaKelahiran" onchange="updateFileName('exampleInputFileAkta', 'fileLabelAkta')" required>
 									<label class="custom-file-label" id="fileLabelAkta" for="exampleInputFileAkta"></label>
 								</div>
 							</div>
@@ -305,7 +305,7 @@
 								<label for="exampleInputFile">Kartu Keluarga (Harap unggah dokumen dengan format pdf)</label>
 								<span style="color: red;">*</span>
 								<div class="custom-file">
-									<input type="file" class="custom-file-input" id="exampleInputFileKK" name="KK" onchange="updateFileName('exampleInputFileKK', 'fileLabelKK')" required data-section="4">
+									<input type="file" class="custom-file-input" id="exampleInputFileKK" name="KK" onchange="updateFileName('exampleInputFileKK', 'fileLabelKK')" required>
 									<label class="custom-file-label" id="fileLabelKK" for="exampleInputFileKK"></label>
 								</div>
 							</div>
@@ -313,12 +313,12 @@
 								<label for="exampleInputFile">Ijazah SD (Harap unggah dokumen dengan format pdf)</label>
 								<span style="color: red;">*</span>
 								<div class="custom-file">
-									<input type="file" class="custom-file-input" id="exampleInputFileIjazah" name="ijazahSD" onchange="updateFileName('exampleInputFileIjazah', 'fileLabelIjazah')" required data-section="4">
+									<input type="file" class="custom-file-input" id="exampleInputFileIjazah" name="ijazahSD" onchange="updateFileName('exampleInputFileIjazah', 'fileLabelIjazah')" required>
 									<label class="custom-file-label" id="fileLabelIjazah" for="exampleInputFileIjazah"></label>
 								</div>
 							</div>
 						</div>
-						<button type="button" class="btn btn-info text-white" onclick="previousSection(4)">Sebelumnya</button>
+						<a href="<?= base_url('/pendaftarMasuk') ?>" type="button" class="btn btn-danger">Kembali</a>
 						<button type="submit" class="btn btn-primary">Simpan Data</button>
 					</div>
 					<!-- End Form Section -->
@@ -344,50 +344,5 @@
 		}
 	}
 </script>
-
-<script>
-	function showSection(sectionNumber) {
-		// Hide all sections
-		document.querySelectorAll('.form-section').forEach(function(section) {
-			section.style.display = 'none';
-		});
-
-		// Show the selected section
-		document.getElementById('section' + sectionNumber).style.display = 'block';
-	}
-
-	function nextSection(currentSection) {
-		// Move to the next section
-		showSection(currentSection + 1);
-	}
-
-	function previousSection(currentSection) {
-		// Move to the previous section
-		showSection(currentSection - 1);
-	}
-
-	// Initially, show the first section
-	document.addEventListener('DOMContentLoaded', function() {
-		showSection(1);
-	});
-</script>
-
-<script>
-	function nextSection(currentSection) {
-		// Dapatkan semua input yang diperlukan di bagian saat ini
-		const requiredInputs = document.querySelectorAll(`.form-section#section${currentSection} [required]`);
-
-		// Periksa apakah semua input yang diperlukan telah diisi
-		const allInputsFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
-
-		// Pindah ke bagian berikutnya hanya jika semua input telah diisi
-		if (allInputsFilled) {
-			showSection(currentSection + 1);
-		} else {
-			alert('Harap isi semua form yang diperlukan sebelum melanjutkan.');
-		}
-	}
-</script>
-
 
 <?= $this->endSection(); ?>

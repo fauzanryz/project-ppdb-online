@@ -38,4 +38,13 @@ class PendaftarDiterima extends BaseController
         session()->setFlashdata('pesan', 'Data Berhasil Dihapus !');
         return redirect()->to(base_url('/pendaftarDiterima'));
     }
+    public function cetakPendaftarDiterima()
+    {
+        $data = [
+            'title' => 'Pendaftar Diterima',
+            'pendaftarDiterima' => $this->ModelPendaftar->getPendaftarDiterima(),
+        ];
+
+        return view('pendaftarDiterima/cetakPendaftarDiterima', $data);
+    }
 }

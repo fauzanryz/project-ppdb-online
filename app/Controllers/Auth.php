@@ -60,8 +60,8 @@ class Auth extends BaseController
         ])) {
             // Jika berhasil ditambahkan
             $data = array(
-                'email' => htmlspecialchars($this->request->getVar('email')),
-                'username' => htmlspecialchars($this->request->getVar('username')),
+                'email' => esc($this->request->getVar('email')),
+                'username' => esc($this->request->getVar('username')),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
                 'foto' => 'default.png',
                 'level' => 2,
@@ -101,7 +101,7 @@ class Auth extends BaseController
             ],
         ])) {
             // Jika Data Valid
-            $identity = htmlspecialchars($this->request->getVar('username-email'));
+            $identity = esc($this->request->getVar('username-email'));
             $password = $this->request->getPost('password');
             $check = $this->ModelAuth->login($identity, $password);
             if ($check) {

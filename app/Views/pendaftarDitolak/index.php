@@ -20,7 +20,7 @@
             </div>
         <?php endif ?>
 
-        <table id="example1" class="table table-bordered table-striped table-responsive-md">
+        <table id="example1" class="table table-bordered table-striped table-responsive-md table-sm">
             <thead style="text-align: center;">
                 <tr>
                     <th scope="col">No</th>
@@ -40,16 +40,16 @@
                         <td><?= $dftr['nama']; ?></td>
                         <td><?= $dftr['jenisKel']; ?></td>
                         <td><?= $dftr['tempatLahir']; ?></td>
-                        <td><?= $dftr['tanggalLahir']; ?></td>
+                        <td><?= date('d-m-Y', strtotime($dftr['tanggalLahir'])); ?></td>
                         <td><?= $dftr['status_daftar']; ?></td>
                         <td>
                             <?php if (session()->get('level') == 1) : ?>
-                                <a href="<?= base_url('/pendaftarDitolak/detail' . '/' . $dftr['idPendaftar']) ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                                <a href="<?= base_url('/pendaftarDitolak/detail' . '/' . $dftr['idPendaftar']) ?>" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></a>
 
                                 <form action="<?= base_url('/pendaftarDitolak/hapus' . '/' . $dftr['idPendaftar']); ?>" class="d-inline" method="POST">
                                     <?= csrf_field(); ?>
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>
                                 </form>
 
                             <?php endif; ?>

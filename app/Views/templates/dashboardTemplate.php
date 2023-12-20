@@ -49,13 +49,13 @@
         <li class="nav-item">
         <li class="nav-item dropdown user-menu">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="margin-top: 4px; margin-bottom: 6px;">
-            <img src="<?= base_url('img/' . session()->get('foto')); ?>" style="width: 35px;" class="user-image img-circle elevation-2" alt="User Image">
+            <img src="<?= base_url('assets/' . session()->get('foto')); ?>" style="width: 35px;" class="user-image img-circle elevation-2" alt="User Image">
             <span class="d-none d-md-inline"><?= ucfirst(session()->get('username')) ?></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <!-- User image -->
             <li class="user-header bg-primary">
-              <img src="<?= base_url('img/' . session()->get('foto')); ?>" class="img-circle elevation-2" alt="User Image">
+              <img src="<?= base_url('assets/' . session()->get('foto')); ?>" class="img-circle elevation-2" alt="User Image">
 
               <p>
                 <?= ucfirst(session()->get('username')) ?>
@@ -77,7 +77,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="<?= base_url('/dashboard'); ?>" class="brand-link">
-        <img src="<?= base_url(); ?>/img/logo.png" class="brand-image" style="opacity: .8">
+        <img src="<?= base_url(); ?>/assets/logo.png" class="brand-image" style="opacity: .8">
         <span class="brand-text font-weight-light">MTsN 4 TALA</span>
       </a>
 
@@ -138,32 +138,44 @@
               <li class="nav-item">
                 <a href="<?= base_url('/kelolaUser'); ?>" class="nav-link">
                   <i class="nav-icon fas fa-users"></i>
-                  <p>
-                    Kelola User
-                  </p>
+                  <p>Kelola User</p>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a href="<?= base_url('/pengaturan'); ?>" class="nav-link">
+                <a href="" class="nav-link ">
                   <i class="nav-icon fas fa-ellipsis-h"></i>
-                  <p>
-                    Pengaturan
-                  </p>
+                  <p>Pengaturan <i class="right fas fa-angle-left"></i></p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?= base_url('/banner'); ?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Banner</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('/profil'); ?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Profil</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
+
+              <!-- Ensure the 'Keluar' link is not part of the treeview -->
               <li class="nav-item">
                 <a href="<?= base_url('logout'); ?>" class="nav-link">
                   <i class="nav-icon fas fa-arrow-left"></i>
-                  <p>
-                    Keluar
-                  </p>
+                  <p>Keluar</p>
                 </a>
               </li>
+
 
               <!-- Menu Siswa -->
             <?php } elseif (session()->get('level') == 2) { ?>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?= base_url('dashboard'); ?>" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
@@ -171,8 +183,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                <a href="<?= base_url('biodata'); ?>" class="nav-link">
+                  <i class="nav-icon fas fa-solid fa-address-card"></i>
                   <p>
                     Biodata
                   </p>
@@ -180,7 +192,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?= base_url('logout'); ?>" class="nav-link">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <i class="nav-icon fas fa-arrow-left"></i>
                   <p>
                     Keluar
                   </p>
