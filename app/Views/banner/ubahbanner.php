@@ -22,14 +22,12 @@
 
 		<form method="POST" action="/banner/proses_ubah" method="POST" enctype="multipart/form-data">
 			<?= csrf_field(); ?>
-			<input type="hidden" value="<?= $data['idBanner'] ?>" name="id">
+			<input type="hidden" value="<?= $data['idBanner'] ?>" name="idBanner">
 			<div class="form-group mt-2 mb-3">
-				<label for="exampleInputFile">Foto</label>
-				<div class="input-group">
-					<div class="custom-file">
-						<input type="file" class="custom-file-input" id="exampleInputFile" name="foto" onchange="updateFileName()">
-						<label class="custom-file-label" for="exampleInputFile">Pilih file</label>
-					</div>
+				<label for="exampleInputFile">Gambar</label>
+				<div class="custom-file">
+					<input type="file" class="custom-file-input" id="exampleInputFileGambar" name="foto" onchange="updateFileName('exampleInputFileGambar', 'fileLabelGambar')" required>
+					<label class="custom-file-label" id="fileLabelGambar" for="exampleInputFileGambar"><?= $data['gambar']; ?></label>
 				</div>
 			</div>
 
@@ -59,6 +57,20 @@
 </div>
 <!-- ./wrapper -->
 
+<script>
+	function updateFileName(inputId, labelId) {
+		var fileInput = document.getElementById(inputId);
+		var fileLabel = document.getElementById(labelId);
 
+		// Cek jika file input tidak kosong
+		if (fileInput.files.length > 0) {
+			// Tampilkan nama file yang dipilih
+			fileLabel.innerText = fileInput.files[0].name;
+		} else {
+			// Jika tidak ada file dipilih, biarkan label kosong
+			fileLabel.innerText = '';
+		}
+	}
+</script>
 
 <?= $this->endSection('content') ?>

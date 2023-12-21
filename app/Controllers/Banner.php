@@ -52,9 +52,10 @@ class Banner extends BaseController
 
     public function proses_ubah()
     {
-
+        // $data = $this->request->getVar();
+        // dd($data);
         $where = [
-            'id' => $this->request->getPost('id'),
+            'idBanner' => $this->request->getPost('idBanner'),
         ];
         $file = $this->request->getFile('foto');
         $nama_file = $file->getRandomName();

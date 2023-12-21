@@ -44,16 +44,18 @@ class Auth extends BaseController
             ],
             'password' => [
                 'label' => 'Password',
-                'rules' => 'required|max_length[100]',
+                'rules' => 'required|min_length[8]|max_length[100]',
                 'errors' => [
                     'required' => '{field} Tidak Boleh Kosong',
+                    'min_length' => '{field} Minimal 8 karakter',
                 ],
             ],
             'repassword' => [
                 'label' => 'Password',
-                'rules' => 'required|max_length[100]|matches[password]',
+                'rules' => 'required|min_length[8]|max_length[100]|matches[password]',
                 'errors' => [
                     'required' => '{field} Tidak Boleh Kosong',
+                    'min_length' => '{field} Minimal 8 karakter',
                     'matches' => '{field} Tidak Cocok',
                 ],
             ],

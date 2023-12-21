@@ -104,10 +104,10 @@
                     <img class="d-block w-100" height="500px" src="file/<?= $data[0]['gambar'] ?>" alt="First slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" height="500px" src="file/<?= $data[0]['gambar'] ?>" alt="Second slide">
+                    <img class="d-block w-100" height="500px" src="file/<?= $data[1]['gambar'] ?>" alt="Second slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" height="500px" src="file/<?= $data[0]['gambar'] ?>" alt="Third slide">
+                    <img class="d-block w-100" height="500px" src="file/<?= $data[2]['gambar'] ?>" alt="Third slide">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
