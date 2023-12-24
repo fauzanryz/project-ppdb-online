@@ -18,26 +18,7 @@ class Profil extends BaseController
         return view('profil/index', $data);
     }
 
-    public function tambah_profil()
-    {
-        $data = array('title' => 'Form Tambah Data Profil');
-        return view('profil/tambahprofil', $data);
-    }
-    public function proses_tambah()
-    {
-        $profil  = new ModelProfil();
-        $data = [
-            'alur_pendaftaran' => $this->request->getPost('alur_pendaftaran'),
-            'syarat_pendaftaran' => $this->request->getPost('syarat_pendaftaran'),
-            'visi' => $this->request->getPost('visi'),
-            'misi' => $this->request->getPost('misi'),
-        ];
-        $profil->addData($data);
-        return redirect()->to(base_url('profil'));
-    }
-
-
-    public function ubah_profil($id_profil)
+    public function detailEditProfil($id_profil)
     {
         $profil  = new ModelProfil();
         $data = [
@@ -47,7 +28,7 @@ class Profil extends BaseController
         return view('profil/ubahprofil', $data);
     }
 
-    public function proses_ubah()
+    public function updateProfil()
     {
         $profil  = new ModelProfil();
         $where = [
@@ -60,16 +41,6 @@ class Profil extends BaseController
             'misi' => $this->request->getPost('misi'),
         ];
         $profil->updateData($data, $where);
-        return redirect()->to(base_url('profil'));
-    }
-
-    public function hapus_profil($id_profil)
-    {
-        $profil  = new ModelProfil();
-        $where = [
-            'idProfil' => $id_profil
-        ];
-        $profil->deleteData($where);
         return redirect()->to(base_url('profil'));
     }
 }

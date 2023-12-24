@@ -53,4 +53,19 @@ class Dashboard extends BaseController
 
         return view('dashboard/index', $data);
     }
+    public function cetakBuktiPendaftaran($idPendaftar = false)
+    {
+        // Ambil ID pendaftar dari session
+        $idPendaftar = session('idPendaftar');
+        // Pastikan ID pendaftar adalah id pendaftar yang valid
+        if (empty($idPendaftar)) {
+            return redirect()->to(base_url('/')); // Atau alamat lain sesuai kebijakan aplikasi Anda
+        }
+
+        $data = [
+            'title' => 'Bukti Pendaftaran',
+            'pendaftar' => $this->ModelPendaftar->getPendaftarById($idPendaftar),
+        ];
+        return view('dashboard/cetakBuktiPendaftaran', $data);
+    }
 }

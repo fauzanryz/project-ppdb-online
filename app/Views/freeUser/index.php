@@ -17,78 +17,36 @@
         </button>
 
         <div class="collapse navbar-collapse order-3" id="navbarCollapse">
-          <!-- Left navbar links -->
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="<?= base_url(); ?>" class="nav-link">Beranda</a>
+              <a href="<?= base_url(); ?>" class="nav-link text-dark">Beranda</a>
             </li>
             <li class="nav-item">
-              <a href="#kontak" class="nav-link">Kontak</a>
+              <a href="#visimisi" class="nav-link text-dark">Visi-Misi</a>
             </li>
             <li class="nav-item dropdown">
-              <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Pendaftaran</a>
+              <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-dark">Pendaftaran</a>
               <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                <li><a href="#" class="dropdown-item">Mendaftar </a></li>
-                <li><a href="#" class="dropdown-item">Cara Mendaftar</a></li>
-
-                <li class="dropdown-divider"></li>
-
-                <!-- Level two dropdown-->
-                <li class="dropdown-submenu dropdown-hover">
-                  <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Hover for action</a>
-                  <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
-                    <li>
-                      <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
-                    </li>
-
-                    <!-- Level three dropdown-->
-                    <li class="dropdown-submenu">
-                      <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
-                      <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
-                        <li><a href="#" class="dropdown-item">3rd level</a></li>
-                        <li><a href="#" class="dropdown-item">3rd level</a></li>
-                      </ul>
-                    </li>
-                    <!-- End Level three -->
-
-                    <li><a href="#" class="dropdown-item">level 2</a></li>
-                    <li><a href="#" class="dropdown-item">level 2</a></li>
-                  </ul>
-                </li>
-                <!-- End Level two -->
+                <li><a href="<?= base_url('register') ?>" class="dropdown-item text-dark">Mendaftar</a></li>
+                <li><a href="#alurpendaftaran" class="dropdown-item text-dark">Alur Pendaftaran</a></li>
+                <li><a href="#syaratpendaftaran" class="dropdown-item text-dark">Syarat Pendaftaran</a></li>
               </ul>
             </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="<?= base_url('login') ?>">
+                Masuk
+              </a>
+            </li>
           </ul>
-
-          <!-- SEARCH FORM -->
-          <form class="form-inline ml-0 ml-md-3">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Cari..." aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </form>
         </div>
-
-        <!-- Right navbar links -->
-        <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('login') ?>">
-              Masuk
-            </a>
-          </li>
-        </ul>
       </div>
     </nav>
     <!-- /.navbar -->
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="background-color: #00B696;">
       <!-- Main content -->
-      <div class="content">
+      <div class="content" style="background-color: #00B696;">
         <div class="container">
           <div class="row">
 
@@ -138,62 +96,87 @@
     <div class="content" style="background-color: #00B696;">
       <div class="container">
         <div class="row text-center">
-          <div class="col-12 bg-visimisi">
+          <div class="col-12 mt-5 bg-visimisi">
             <br>
+            <div class="bg-visimisi" id="visimisi">
+              <div class="col-lg-12">
+                <div class="card" style="background-color: #f0f0f0;">
+                  <div class="card-body">
+                    <h5 class="col-lg-12 font-weight-bold">Visi</h5>
+                    <p class="card-text m-0 p-0 font-italic" style="white-space: pre-line;">
+                      <?= $profil['visi'] ?>
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-            <div class="col-lg-12">
-              <div class="card" style="background-color: #f0f0f0;">
-                <div class="card-body">
-                  <h5 class="col-lg-12">Visi</h5>
-
-                  <p class="card-text">
-                    <?= $profil['visi'] ?>
-                  </p>
+              <div class="col-lg-12">
+                <div class="card" style="background-color: #f0f0f0;">
+                  <div class="card-body">
+                    <h5 class="col-lg-12 font-weight-bold">Misi</h5>
+                    <p class="card-text m-0 p-0 font-italic" style="white-space: pre-line;">
+                      <?= $profil['misi'] ?>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-body" style="background-color: #f0f0f0;">
-                  <h5 class="col-lg-12">Misi</h5>
-
-                  <p class="card-text" style="white-space: pre-line;">
-                    <?= $profil['misi'] ?>
-                  </p>
+            <!-- Alur Pendaftaran -->
+            <div class="bg-alurpendaftaran" id="alurpendaftaran">
+              <div class="col-lg-12">
+                <div class="card" style="background-color: #f0f0f0;">
+                  <div class="card-body">
+                    <h5 class="col-lg-12 font-weight-bold">Alur Pendaftran</h5>
+                    <p class="card-text m-0 p-0 font-italic" style="white-space: pre-line;">
+                      <?= $profil['alur_pendaftaran'] ?>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!--  -->
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-body" style="background-color: #f0f0f0;">
-                  <h5 class="col-lg-12">Alur Pendaftran</h5>
-
-                  <p class="card-text" style="white-space: pre-line;">
-                    <?= $profil['alur_pendaftaran'] ?>
-                  </p>
+            <!-- Syarat Pendaftaran -->
+            <div class="bg-syaratpendaftaran" id="syaratpendaftaran">
+              <div class="col-lg-12">
+                <div class="card" style="background-color: #f0f0f0;">
+                  <div class="card-body">
+                    <h5 class="col-lg-12 font-weight-bold">Syarat Pendaftaran</h5>
+                    <p class="card-text m-0 p-0 font-italic" style="white-space: pre-line;">
+                      <?= $profil['syarat_pendaftaran'] ?>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-body" style="background-color: #f0f0f0;">
-                  <h5 class="col-lg-12">Syarat Pendaftaran</h5>
 
-                  <p class="card-text" style="white-space: pre-line;">
-                    <?= $profil['syarat_pendaftaran'] ?>
-                  </p>
+            <!-- Kontak Kami -->
+            <div class="bg-kontakkami" id="kontak">
+              <div class="col-lg-12">
+                <div class="card" style="background-color: #f0f0f0;">
+                  <div class="card-body">
+                    <h5 class="col-lg-12 font-weight-bold">Kontak Kami</h5>
+                    <p class="card-text">
+                    <p class="h6 text-center font-italic" style="font-size: 13px;"> JL. Matah II Karang Taruna Pelaihari - Tanah Laut - Kalimantan Selatan</p>
+                    <p class="h6 text-center font-italic" style="font-size: 13px;"> 085246474785 </p>
+                    <p class="h6 text-center font-italic" style="font-size: 13px;"> info@mtsn4tala.sch.id</p>
+                    <p class="h6 text-center font-italic" style="font-size: 13px;"> www.mtsn4tala.sch.id</p>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+
+
+
 
           </div>
         </div>
       </div>
     </div>
+
+
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->
@@ -203,22 +186,11 @@
   </div>
   </div>
 
-  <div class="bg-kontakkami" id="kontak">
-    <p class="h3 text-center"> Kontak Kami</p>
-    <p class="h6 text-center"> JL. Matah II Karang Taruna Pelaihari - Tanah Laut - Kalimantan Selatan</p>
-    <p class="h6 text-center"> 085246474785 </p>
-    <p class="h6 text-center"> info@mtsn4tala.sch.id</p>
-    <p class="h6 text-center"> www.mtsn4tala.sch.id</p>
-  </div>
-
   <!-- Main Footer -->
-  <footer class="main-footer">
+  <footer class="main-footer text-center">
     <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-
-    </div>
     <!-- Default to the left -->
-    <strong> &copy; MTsN 4 Tanah Laut.</strong>
+    <strong> &copy; MTsN 4 Tanah Laut</strong>
   </footer>
   </div>
   <!-- ./wrapper -->

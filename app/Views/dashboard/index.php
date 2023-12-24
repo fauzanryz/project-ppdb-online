@@ -190,6 +190,7 @@
                   <marquee style="margin-bottom:-5px;">Pada MTsN 4 Tanah Laut</marquee>
                 </div>
               </div>
+              <a href="<?= base_url('cetakBuktiPendaftaran/' . session('idPendaftar')); ?>" class="btn btn-primary mb" target="_blank"><i class="fas fa-solid fa-print"></i> Cetak Bukti Pendaftaran</a>
             </div><!--End llustrations-->
           </div>
         </div>

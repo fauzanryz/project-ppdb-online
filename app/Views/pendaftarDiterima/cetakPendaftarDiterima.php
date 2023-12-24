@@ -171,7 +171,7 @@
         </table>
         <table class="font-17px" style="margin-left: 450px; margin-top: 100px">
             <tr>
-                <td>Mubasir,S.Pd I.M.Pd </td>
+                <td>Mubasir, S.Pd I.M.Pd </td>
             </tr>
         </table>
     </div>

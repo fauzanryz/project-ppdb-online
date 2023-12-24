@@ -22,6 +22,8 @@ class Biodata extends BaseController
         }
 
         $UserID = $this->ModelUser->where('email', session('email'))->first()['idUser'];
+        // Simpan ID pendaftar dalam session
+        session()->set('idPendaftar', $UserID);
         $data = [
             'title' => 'Biodata',
             'pendaftar' => $this->ModelPendaftar->getPendaftarById($UserID),
@@ -350,4 +352,5 @@ class Biodata extends BaseController
             return redirect()->back()->withInput();
         }
     }
+
 }

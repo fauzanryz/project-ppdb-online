@@ -15,22 +15,21 @@ class ModelAuth extends Model
         'foto',
         'level'
     ];
-    public function saveRegister($data){
+    public function saveRegister($data)
+    {
         $this->db->table('user')->insert($data);
     }
-
     public function login($identity, $password)
     {
         $user = $this->db->table('user')
-                        ->where('email', $identity)
-                        ->orWhere('username', $identity)
-                        ->get()
-                        ->getRowArray();
+            ->where('email', $identity)
+            ->orWhere('username', $identity)
+            ->get()
+            ->getRowArray();
         if ($user && password_verify($password, $user['password'])) {
             return $user;
         } else {
             return false;
         }
     }
-
 }

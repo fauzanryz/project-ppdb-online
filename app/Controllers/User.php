@@ -106,7 +106,7 @@ class User extends BaseController
         return redirect()->to(base_url('/kelolaUser'));
     }
 
-    public function editUser($idUser)
+    public function detailEditUser($idUser)
     {
         $data = [
             'title' => 'User',

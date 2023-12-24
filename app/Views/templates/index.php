@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,14 +16,15 @@
   <link rel="stylesheet" href="<?= base_url(); ?>/AdminLTE/dist/css/adminlte.min.css">
   <style>
     .alert-danger ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
+
     .alert-danger li {
-        margin-left: 1.25em;
+      margin-left: 1.25em;
     }
-</style>
+  </style>
 </head>
 
 <?= $this->renderSection('content') ?>
@@ -35,11 +37,12 @@
 <script src="<?= base_url(); ?>/AdminLTE/dist/js/adminlte.min.js"></script>
 <!-- Menghapus notifikasi setelah beberapa detik -->
 <script>
-  window.setTimeout(function(){
-    $(".alert").fadeTo(500,0).slideUp(500, function(){
+  window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function() {
       $(this).remove();
     })
   }, 3000);
 </script>
 </body>
+
 </html>

@@ -353,7 +353,7 @@ class Pendaftar extends BaseController
         return redirect()->to(base_url('/pendaftarMasuk'));
     }
 
-    public function editPendaftar($idPendaftar, $idUser = false)
+    public function detailEditPendaftar($idPendaftar, $idUser = false)
     {
         $data = [
             'title' => 'Pendaftar',
@@ -550,41 +550,6 @@ class Pendaftar extends BaseController
         } else {
             session()->setFlashdata('errors', $this->validator->listErrors());
             return redirect()->back()->withInput();
-        }
-    }
-
-    public function downloadFile($fileType, $fileName)
-    {
-        // Tentukan path berdasarkan jenis file dan nama file
-        $folder = '';
-
-        switch ($fileType) {
-            case 'pasfoto':
-                $folder = 'pasfoto';
-                break;
-            case 'aktaKelahiran':
-                $folder = 'akta_kelahiran';
-                break;
-            case 'KK':
-                $folder = 'kartu_keluarga';
-                break;
-            case 'ijazahSD':
-                $folder = 'ijazah_sd';
-                break;
-            default:
-                // Handle jika jenis file tidak valid
-                return redirect()->to(base_url('/'))->with('error', 'Jenis file tidak valid');
-        }
-
-        // Set path lengkap file
-        $filePath = 'upload/' . $folder . '/' . $fileName;
-
-        // Pastikan file ada sebelum diunduh
-        if (file_exists($filePath)) {
-            $this->response->download($filePath, null);
-        } else {
-            // Handle jika file tidak ditemukan
-            return redirect()->to(base_url('/'))->with('error', 'File tidak ditemukan');
         }
     }
 }

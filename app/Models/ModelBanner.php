@@ -12,12 +12,6 @@ class ModelBanner extends Model
     {
         return $this->findAll();
     }
-    public function AddData($data)
-    {
-        $builder = $this->db->table($this->table);
-        return $builder->insert($data);
-    }
-
     public function getDataWhere($id)
     {
         return $this->getWhere(['idBanner' => $id]);
@@ -27,10 +21,5 @@ class ModelBanner extends Model
         $builder = $this->db->table($this->table);
         $builder->where($where);
         return $builder->update($data);
-    }
-    public function deleteData($where)
-    {
-        $builder = $this->db->table($this->table);
-        return $builder->delete($where);
     }
 }

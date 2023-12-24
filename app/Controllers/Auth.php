@@ -16,8 +16,8 @@ class Auth extends BaseController
 
     public function register()
     {
-        $data = array('title' => 'Register');
-        return view('auth/register');
+        $data = array('title' => 'Registrasi');
+        return view('auth/register', $data);
     }
 
     public function saveRegister()
@@ -81,7 +81,7 @@ class Auth extends BaseController
     public function login()
     {
         $data = array('title' => 'Login');
-        return view('auth/login');
+        return view('auth/login', $data);
     }
 
     public function checkLogin()
