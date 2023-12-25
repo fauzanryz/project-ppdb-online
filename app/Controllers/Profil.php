@@ -41,6 +41,7 @@ class Profil extends BaseController
             'misi' => $this->request->getPost('misi'),
         ];
         $profil->updateData($data, $where);
+        session()->setFlashdata('pesan', 'Data Berhasil Diubah');
         return redirect()->to(base_url('profil'));
     }
 }

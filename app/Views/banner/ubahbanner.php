@@ -26,7 +26,7 @@
 			<div class="form-group mt-2 mb-3">
 				<label for="exampleInputFile">Gambar</label>
 				<div class="custom-file">
-					<input type="file" class="custom-file-input" id="exampleInputFileGambar" name="foto" onchange="updateFileName('exampleInputFileGambar', 'fileLabelGambar')" required>
+					<input type="file" class="custom-file-input" id="exampleInputFileGambar" name="gambar" onchange="updateFileName('exampleInputFileGambar', 'fileLabelGambar')">
 					<label class="custom-file-label" id="fileLabelGambar" for="exampleInputFileGambar"><?= $data['gambar']; ?></label>
 				</div>
 			</div>
