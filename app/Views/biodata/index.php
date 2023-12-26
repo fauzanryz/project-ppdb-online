@@ -92,7 +92,6 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                     </div>
                 <?php endif; ?>
 
-
                 <form method="POST" action="<?= base_url('biodata/tambahBiodata'); ?>" enctype="multipart/form-data">
                     <?= csrf_field(); ?>
                     <!-- Data Calon Siswa -->
@@ -109,7 +108,7 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                             <div class="col">
                                 <label class="col-form-label">Nama Lengkap</label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="nama" class="form-control" autocomplete="off" value="<?= $nama; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="nama" pattern="[A-Za-z\s]+" maxlength="100" class="form-control" autocomplete="off" value="<?= $nama; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
@@ -126,7 +125,7 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                             <div class="col">
                                 <label class="col-form-label">Tempat Lahir</label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="tempatLahir" class="form-control" autocomplete="off" value="<?= $tempatLahir; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?> required>
+                                <input type="text" name="tempatLahir" pattern="[A-Za-z\s]+" maxlength="100" class="form-control" autocomplete="off" value="<?= $tempatLahir; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?> required>
                             </div>
 
                             <div class="col">
@@ -139,46 +138,46 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                             <div class="col">
                                 <label class="col-form-label">NISN</label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="nisn" class="form-control" autocomplete="off" value="<?= $nisn ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="nisn" pattern="[0-9\s]*" maxlength="50" class="form-control" autocomplete="off" value="<?= $nisn ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
                                 <label class="col-form-label">NIK </label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="nik" class="form-control" min=0 autocomplete="off" value="<?= $nik; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="nik" pattern="[0-9\s]*" maxlength="50" class="form-control" min=0 autocomplete="off" value="<?= $nik; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Anak Ke </label>
                                 <span style="color: red;">*</span>
-                                <input type="number" name="anakKe" class="form-control" autocomplete="off" value="<?= $anakKe; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="number" name="anakKe" max="99" class="form-control" autocomplete="off" value="<?= $anakKe; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
                                 <label class="col-form-label">Jumlah Saudara </label>
                                 <span style="color: red;">*</span>
-                                <input type="number" name="jumlahSaudara" class="form-control" min=0 autocomplete="off" value="<?= $jumlahSaudara; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="number" name="jumlahSaudara" max="99" class="form-control" min=0 autocomplete="off" value="<?= $jumlahSaudara; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Alamat </label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="alamat" class="form-control" autocomplete="off" value="<?= $alamat; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="alamat" pattern="[A-Za-z0-9\s.,/'()-]+" maxlength="150" class="form-control" autocomplete="off" value="<?= $alamat; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
                                 <label class="col-form-label">No Telepon</label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="noTelp" class="form-control" min=0 autocomplete="off" value="<?= $noTelp; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="noTelp" pattern="[0-9+\s]+" maxlength="20" class="form-control" min=0 autocomplete="off" value="<?= $noTelp; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Sekolah Asal</label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="sekolahAsal" class="form-control" autocomplete="off" value="<?= $sekolahAsal; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="sekolahAsal" pattern="[A-Za-z0-9\s]+" maxlength="50" class="form-control" autocomplete="off" value="<?= $sekolahAsal; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
 
@@ -197,46 +196,46 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                             <div class="col">
                                 <label class="col-form-label">Nama Ayah</label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="namaAyah" class="form-control" autocomplete="off" value="<?= $namaAyah; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="namaAyah" pattern="[A-Za-z\s]+" maxlength="100" class="form-control" autocomplete="off" value="<?= $namaAyah; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
                                 <label class="col-form-label">Nama Ibu </label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="namaIbu" class="form-control" min=0 autocomplete="off" value="<?= $namaIbu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="namaIbu" pattern="[A-Za-z\s]+" maxlength="100" class="form-control" min=0 autocomplete="off" value="<?= $namaIbu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Pekerjaan Ayah</label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="pekerjaanAyah" class="form-control" autocomplete="off" value="<?= $pekerjaanAyah; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="pekerjaanAyah" pattern="[A-Za-z\s]+" maxlength="100" class="form-control" autocomplete="off" value="<?= $pekerjaanAyah; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
                                 <label class="col-form-label">Pekerjaan Ibu </label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="pekerjaanIbu" class="form-control" min=0 autocomplete="off" value="<?= $pekerjaanIbu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="pekerjaanIbu" pattern="[A-Za-z\s]+" maxlength="100" class="form-control" min=0 autocomplete="off" value="<?= $pekerjaanIbu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">NIK Ayah</label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="nikAyah" class="form-control" autocomplete="off" value="<?= $nikAyah; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="nikAyah" pattern="[0-9\s]*" maxlength="50" class="form-control" autocomplete="off" value="<?= $nikAyah; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
                                 <label class="col-form-label">NIK Ibu </label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="nikIbu" class="form-control" min=0 autocomplete="off" value="<?= $nikIbu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="nikIbu" pattern="[0-9\s]*" maxlength="50" class="form-control" min=0 autocomplete="off" value="<?= $nikIbu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Penghasilan Orang Tua (contoh: 1000000)</label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="penghasilanOrtu" class="form-control" autocomplete="off" value="<?= $penghasilanOrtu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="penghasilanOrtu" pattern="[0-9]+" maxlength="100" class="form-control" autocomplete="off" value="<?= $penghasilanOrtu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
@@ -257,7 +256,7 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                             <div class="col">
                                 <label class="col-form-label">Alamat Orang Tua </label>
                                 <span style="color: red;">*</span>
-                                <input type="text" name="alamatOrtu" class="form-control" autocomplete="off" value="<?= $alamatOrtu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="alamatOrtu" pattern="[A-Za-z0-9\s.,/'()-]+" maxlength="150" class="form-control" autocomplete="off" value="<?= $alamatOrtu; ?>" required <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
@@ -280,12 +279,12 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Nama Wali</label>
-                                <input type="text" name="namaWali" class="form-control" autocomplete="off" value="<?= $namaWali; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="namaWali" pattern="[A-Za-z\s]+" maxlength="100" class="form-control" autocomplete="off" value="<?= $namaWali; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
                                 <label class="col-form-label">Pekerjaan Wali </label>
-                                <input type="text" name="pekerjaanWali" class="form-control" min=0 autocomplete="off" value="<?= $pekerjaanWali; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="pekerjaanWali" pattern="[A-Za-z\s]+" maxlength="100" class="form-control" min=0 autocomplete="off" value="<?= $pekerjaanWali; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
                         <div class="form-row">
@@ -304,7 +303,7 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
 
                             <div class="col">
                                 <label class="col-form-label">Alamat Wali </label>
-                                <input type="text" name="alamatWali" class="form-control" min=0 autocomplete="off" value="<?= $alamatWali; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="alamatWali" pattern="[A-Za-z0-9\s.,/'()-]+" maxlength="150" class="form-control" min=0 autocomplete="off" value="<?= $alamatWali; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
                     </div>
@@ -321,18 +320,18 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Siswa Pindahan</label>
-                                <input type="text" name="siswaPindahan" class="form-control" autocomplete="off" value="<?= $siswaPindahan; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="siswaPindahan" pattern="[A-Za-z0-9\s]+" maxlength="50" class="form-control" autocomplete="off" value="<?= $siswaPindahan; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
 
                             <div class="col">
                                 <label class="col-form-label">No. Surat Pindah </label>
-                                <input type="text" name="suratPindah" class="form-control" min=0 autocomplete="off" value="<?= $suratPindah; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="suratPindah" pattern="[A-Za-z0-9\s.,/'()-]+" maxlength="50" class="form-control" min=0 autocomplete="off" value="<?= $suratPindah; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Diterima Dikelas</label>
-                                <input type="text" name="diterimaDiKelas" class="form-control" autocomplete="off" value="<?= $diterimaDiKelas; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <input type="text" name="diterimaDiKelas" pattern="[A-Za-z0-9\s.,/'()-]+" maxlength="20" class="form-control" autocomplete="off" value="<?= $diterimaDiKelas; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
                             </div>
                             <div>
                                 <input type="hidden" name="status_daftar" class="form-control" min=0 autocomplete="off" value="Finalisasi">
