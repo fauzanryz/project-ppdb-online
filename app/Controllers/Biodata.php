@@ -42,7 +42,6 @@ class Biodata extends BaseController
         }
 
         // $status_daftar = $this->ModelPendaftar->getPendaftar();
-
         // dd($data);
 
         return view('biodata/index', $data);

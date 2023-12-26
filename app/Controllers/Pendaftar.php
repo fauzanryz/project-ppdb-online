@@ -353,13 +353,12 @@ class Pendaftar extends BaseController
         return redirect()->to(base_url('/pendaftarMasuk'));
     }
 
-    public function detailEditPendaftar($idPendaftar, $idUser = false)
+    public function detailEditPendaftar($idPendaftar)
     {
         $data = [
             'title' => 'Pendaftar',
             'judul' => 'Form Ubah Pendaftar',
             'pendaftar' => $this->ModelPendaftar->getPendaftar($idPendaftar),
-            'user' => $this->ModelUser->getUser($idUser),
         ];
         return view('pendaftar/editPendaftar', $data);
     }

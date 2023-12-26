@@ -117,7 +117,7 @@ class Auth extends BaseController
                 return redirect()->to(base_url('/dashboard'));
             } else {
                 // Jika Datanya Tidak Ada
-                session()->setFlashdata('pesan', 'Username atau Password Tidak Cocok!');
+                session()->setFlashdata('pesan', 'Email/Username atau Password Tidak Cocok!');
                 return redirect()->to(base_url('/login'));
             }
         } else {

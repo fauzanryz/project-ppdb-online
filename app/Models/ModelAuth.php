@@ -17,7 +17,7 @@ class ModelAuth extends Model
     ];
     public function saveRegister($data)
     {
-        $this->db->table('user')->insert($data);
+        return $this->db->table('user')->insert($data);
     }
     public function login($identity, $password)
     {

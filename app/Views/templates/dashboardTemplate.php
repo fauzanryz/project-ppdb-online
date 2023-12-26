@@ -49,13 +49,13 @@
         <li class="nav-item">
         <li class="nav-item dropdown user-menu">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="margin-top: 4px; margin-bottom: 6px;">
-            <img src="<?= base_url('assets/' . session()->get('foto')); ?>" style="width: 35px;" class="user-image img-circle elevation-2" alt="User Image">
+            <img src="<?= base_url('img/' . session()->get('foto')); ?>" style="width: 35px;" class="user-image img-circle elevation-2" alt="User Image">
             <span class="d-none d-md-inline"><?= ucfirst(session()->get('username')) ?></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <!-- User image -->
             <li class="user-header bg-primary">
-              <img src="<?= base_url('assets/' . session()->get('foto')); ?>" class="img-circle elevation-2" alt="User Image">
+              <img src="<?= base_url('img/' . session()->get('foto')); ?>" class="img-circle elevation-2" alt="User Image">
 
               <p>
                 <?= ucfirst(session()->get('username')) ?>

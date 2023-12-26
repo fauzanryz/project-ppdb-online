@@ -7,7 +7,7 @@ use App\Models\ModelProfil;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         $banner  = new Modelbanner();
         $profil  = new Modelprofil();

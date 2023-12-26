@@ -291,7 +291,15 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Agama Wali</label>
-                                <input type="text" name="agamaWali" class="form-control" autocomplete="off" value="<?= $agamaWali; ?>" <?= ($status_pendaftar == "sudah_final") ? "readonly" : null; ?>>
+                                <select name="agamaWali" id="inputState" class="form-control" <?= ($status_pendaftar == "sudah_final") ? "disabled" : null; ?>>
+                                    <option disabled selected>--Pilih Agama--</option>
+                                    <option value="Islam" <?= ($agamaWali == 'Islam') ? 'selected' : ''; ?>>Islam</option>
+                                    <option value="Kristen" <?= ($agamaWali == 'Kristen') ? 'selected' : ''; ?>>Kristen</option>
+                                    <option value="Katolik" <?= ($agamaWali == 'Katolik') ? 'selected' : ''; ?>>Katolik</option>
+                                    <option value="Hindu" <?= ($agamaWali == 'Hindu') ? 'selected' : ''; ?>>Hindu</option>
+                                    <option value="Buddha" <?= ($agamaWali == 'Buddha') ? 'selected' : ''; ?>>Buddha</option>
+                                    <option value="Konghucu" <?= ($agamaWali == 'Konghucu') ? 'selected' : ''; ?>>Konghucu</option>
+                                </select>
                             </div>
 
                             <div class="col">

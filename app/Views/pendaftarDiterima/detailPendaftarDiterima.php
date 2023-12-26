@@ -215,7 +215,15 @@
                         <div class="form-row">
                             <div class="col">
                                 <label class="col-form-label">Agama Wali</label>
-                                <input type="text" name="agamaWali" class="form-control" autocomplete="off" value="<?= $dftr['agamaWali']; ?>" readonly>
+                                <select name="agamaWali" id="inputState" class="form-control" disabled>
+                                    <option disabled selected>--Pilih Agama--</option>
+                                    <option value="Islam" <?= ($dftr['agamaWali'] == 'Islam') ? 'selected' : ''; ?>>Islam</option>
+                                    <option value="Kristen" <?= ($dftr['agamaWali'] == 'Kristen') ? 'selected' : ''; ?>>Kristen</option>
+                                    <option value="Katolik" <?= ($dftr['agamaWali'] == 'Katolik') ? 'selected' : ''; ?>>Katolik</option>
+                                    <option value="Hindu" <?= ($dftr['agamaWali'] == 'Hindu') ? 'selected' : ''; ?>>Hindu</option>
+                                    <option value="Buddha" <?= ($dftr['agamaWali'] == 'Budha') ? 'selected' : ''; ?>>Buddha</option>
+                                    <option value="Konghucu" <?= ($dftr['agamaWali'] == 'Konghucu') ? 'selected' : ''; ?>>Konghucu</option>
+                                </select>
                             </div>
 
                             <div class="col">
@@ -314,7 +322,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?= base_url('/pendaftarDitolak') ?>" type="button" class="btn btn-danger">Kembali</a>
+                        <a href="<?= base_url('/pendaftarDiterima') ?>" type="button" class="btn btn-danger">Kembali</a>
                     </div>
                     <!-- End Form Section -->
 

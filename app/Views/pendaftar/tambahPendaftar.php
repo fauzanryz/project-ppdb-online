@@ -216,7 +216,15 @@
 						<div class="form-row">
 							<div class="col">
 								<label class="col-form-label">Agama Wali</label>
-								<input type="text" name="agamaWali" class="form-control" autocomplete="off" value="<?= old('agamaWali'); ?>">
+								<select name="agamaWali" id="inputState" class="form-control" required>
+									<option disabled selected>--Pilih Agama--</option>
+									<option value="Islam">Islam</option>
+									<option value="Kristen">Kristen</option>
+									<option value="Katolik">Katolik</option>
+									<option value="Hindu">Hindu</option>
+									<option value="Buddha">Buddha</option>
+									<option value="Konghucu">Konghucu</option>
+								</select>
 							</div>
 
 							<div class="col">

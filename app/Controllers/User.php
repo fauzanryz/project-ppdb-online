@@ -28,7 +28,6 @@ class User extends BaseController
         $data = [
             'title' => 'User',
             'judul' => 'Form Tambah User',
-            'user' => $this->ModelUser->getUser()
         ];
 
         return view('user/tambahUser', $data);
@@ -197,11 +196,16 @@ class User extends BaseController
             if ($validate) {
                 // Check if new photo is uploaded
                 if ($fileFoto->getError() == 4) {
+                    // No new file uploaded, use the existing photo name
                     $namaFoto = $user['foto'];
                 } else {
-                    // Delete the old photo
+                    // Delete the old photo if it's not the default image
                     if ($user['foto'] != 'default.png') {
-                        unlink('img/' . $user['foto']);
+                        // Check if the old photo exists before unlinking
+                        $oldPhotoPath = 'img/' . $user['foto'];
+                        if (file_exists($oldPhotoPath)) {
+                            unlink($oldPhotoPath);
+                        }
                     }
                     // Upload the new photo
                     $namaFoto = $fileFoto->getRandomName();
