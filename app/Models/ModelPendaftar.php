@@ -23,7 +23,6 @@ class ModelPendaftar extends Model
         }
         return $this->where(['idPendaftar' => $idPendaftar])->join('user', 'user.idUser = data_pendaftar.idUser')->first();
     }
-
     public function getPendaftarDiterima()
     {
         return $this->where('status_daftar', 'Diterima')->findAll();
@@ -39,7 +38,6 @@ class ModelPendaftar extends Model
     public function getPendaftarById($idUser = false)
     {
         if (!$idUser) return false;
-
         return $this->where('data_pendaftar.idUser', $idUser)->first();
     }
 }

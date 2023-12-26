@@ -49,184 +49,35 @@ class Pendaftar extends BaseController
 
     public function tambahPendaftar()
     {
-        // $data = $this->request->getVar();
-        // dd($data);
         $validate = $this->validate([
-            // 'nama' => [
-            //     'label' => 'Nama',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'jenisKel' => [
-            //     'label' => 'Jenis Kelamin',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'tempatLahir' => [
-            //     'label' => 'Tempat Lahir',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'tanggalLahir' => [
-            //     'label' => 'Tempat Lahir',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'nisn' => [
-            //     'label' => 'NISN',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'nik' => [
-            //     'label' => 'NIK',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'anakKe' => [
-            //     'label' => 'Anak Ke',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'jumlahSaudara' => [
-            //     'label' => 'Jumlah Saudara',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'alamat' => [
-            //     'label' => 'Alamat',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'noTelp' => [
-            //     'label' => 'No Telepon',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'sekolahAsal' => [
-            //     'label' => 'Sekolah Asal',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'namaAyah' => [
-            //     'label' => 'Nama Ayah',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'namaIbu' => [
-            //     'label' => 'Nama Ibu',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'pekerjaanAyah' => [
-            //     'label' => 'Pekerjaan Ayah',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'pekerjaanIbu' => [
-            //     'label' => 'Pekerjaan Ibu',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'nikAyah' => [
-            //     'label' => 'NIK Ayah',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'nikIbu' => [
-            //     'label' => 'NIK Ibu',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'penghasilanOrtu' => [
-            //     'label' => 'Penghasilan Ortu',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'agamaOrtu' => [
-            //     'label' => 'Agama Ortu',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'alamatOrtu' => [
-            //     'label' => 'Alamat Ortu',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'pendidikan' => [
-            //     'label' => 'Pendidikan',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'namaWali' => [
-            //     'label' => 'Nama Wali',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'pekerjaanWali' => [
-            //     'label' => 'Pekerjaan Wali',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'agamaWali' => [
-            //     'label' => 'Agama Wali',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
-            // 'alamatWali' => [
-            //     'label' => 'Alamat Wali',
-            //     'rules' => 'required',
-            //     'errors' => [
-            //         'required' => '{field} Tidak Boleh Kosong',
-            //     ],
-            // ],
+            'nisn' => [
+                'label' => 'NISN',
+                'rules' => 'is_unique[data_pendaftar.nisn]',
+                'errors' => [
+                    'is_unique' => '{field} Sudah Terdaftar',
+                ],
+            ],
+            'nik' => [
+                'label' => 'NIK',
+                'rules' => 'is_unique[data_pendaftar.nik]',
+                'errors' => [
+                    'is_unique' => '{field} Sudah Terdaftar',
+                ],
+            ],
+            'nikAyah' => [
+                'label' => 'NIK Ayah',
+                'rules' => 'is_unique[data_pendaftar.nikAyah]',
+                'errors' => [
+                    'is_unique' => '{field} Sudah Terdaftar',
+                ],
+            ],
+            'nikIbu' => [
+                'label' => 'NIK Ibu',
+                'rules' => 'is_unique[data_pendaftar.nikIbu]',
+                'errors' => [
+                    'is_unique' => '{field} Sudah Terdaftar',
+                ],
+            ],
             'status_daftar' => [
                 'label' => 'Status Daftar',
                 'rules' => 'required',
@@ -379,7 +230,6 @@ class Pendaftar extends BaseController
                 'label' => 'Pas Foto',
                 'rules' => 'ext_in[pasfoto,pdf]|max_size[pasfoto,2048]',
                 'errors' => [
-
                     'ext_in' => 'File yang diupload harus berformat (pdf)',
                     'max_size' => 'Ukuran file terlalu besar !!!',
                 ]
@@ -388,7 +238,6 @@ class Pendaftar extends BaseController
                 'label' => 'Akta Kelahiran',
                 'rules' => 'ext_in[aktaKelahiran,pdf]|max_size[aktaKelahiran,2048]',
                 'errors' => [
-
                     'ext_in' => 'File yang diupload harus berformat (pdf)',
                     'max_size' => 'Ukuran file terlalu besar !!!',
                 ]
@@ -397,7 +246,6 @@ class Pendaftar extends BaseController
                 'label' => 'Kartu Keluarga',
                 'rules' => 'ext_in[KK,pdf]|max_size[KK,2048]',
                 'errors' => [
-
                     'ext_in' => 'File yang diupload harus berformat (pdf)',
                     'max_size' => 'Ukuran file terlalu besar !!!',
                 ]
@@ -406,7 +254,6 @@ class Pendaftar extends BaseController
                 'label' => 'Ijazah SD',
                 'rules' => 'ext_in[ijazahSD,pdf]|max_size[ijazahSD,2048]',
                 'errors' => [
-
                     'ext_in' => 'File yang diupload harus berformat (pdf)',
                     'max_size' => 'Ukuran file terlalu besar !!!',
                 ]
