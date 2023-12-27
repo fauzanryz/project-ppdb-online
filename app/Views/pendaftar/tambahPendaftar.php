@@ -110,7 +110,6 @@
 					</div>
 					<!-- End Form Section -->
 
-
 					<!-- Data Ortu -->
 					<div class="form-section mt-4" id="section2">
 						<div class="row mb-3">
@@ -235,7 +234,6 @@
 					</div>
 					<!-- End Form Section -->
 
-
 					<!-- Lain-Lain -->
 					<div class="form-section mt-4" id="section3">
 						<div class="row mb-3">
@@ -280,7 +278,6 @@
 					</div>
 					<!-- End Form section -->
 
-
 					<!-- Lampiran -->
 					<div class="form-section mt-4" id="section4">
 						<div class="row mb-3">
@@ -307,7 +304,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="form-row" style="display: flex; justify-content: space-between; align-items: center;">
 							<div class="form-group mt-2 mb-3 col-6">
 								<label for="exampleInputFile">Kartu Keluarga (Harap unggah dokumen dengan format pdf)</label>
@@ -330,7 +326,6 @@
 						<button type="submit" class="btn btn-primary">Simpan Data</button>
 					</div>
 					<!-- End Form Section -->
-
 				</form>
 			</div>
 		</div>

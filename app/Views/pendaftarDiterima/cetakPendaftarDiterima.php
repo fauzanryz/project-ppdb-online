@@ -105,10 +105,8 @@
                     Telp. (0512)2423053
                 </td>
                 <td style="padding-left:50px;">
-
                 </td>
             </tr>
-
         </table>
     </center>
 
@@ -130,7 +128,6 @@
     </center>
     <div>
 
-
         <table border="0" style="width:100% ;margin-top: 30px; border-collapse:collapse;">
             <thead>
                 <tr>
@@ -150,11 +147,9 @@
                         <td style="font-size: 17px; border:1px solid #333;"><?= $value['nama']; ?></td>
                         <td style="font-size: 17px; border:1px solid #333;"><?= $value['jenisKel'] ?></td>
                     </tr>
-
                 <?php } ?>
             </tbody>
         </table>
-
     </div>
     <div>
 
@@ -167,7 +162,6 @@
             <tr>
                 <td>Kepala Sekolah MTsN 4 Tanah Laut</td>
             </tr>
-
         </table>
         <table class="font-17px" style="margin-left: 450px; margin-top: 100px">
             <tr>
@@ -177,7 +171,6 @@
     </div>
     <div>
         <table class="font-17px" style="justify-content: center; margin-left: 500px; margin-top: 30px">
-
         </table>
     </div>
 </div>
