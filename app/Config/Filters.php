@@ -67,7 +67,7 @@ class Filters extends BaseConfig
                 'biodata/tambahBiodata',
                 'cetakBuktiPendaftaran', 'cetakBuktiPendaftaran/*',
             ]],
-            'toolbar',
+            // 'toolbar',
             // 'honeypot',
             // 'secureheaders',
         ],
