@@ -27,6 +27,21 @@
     .alert-danger li {
       margin-left: 1.25em;
     }
+
+    /* Property CSS Maps */
+    .map-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      margin-bottom: 10px;
+    }
+
+    iframe {
+      width: 87vw;
+      height: 100%;
+      border: 0;
+    }
   </style>
 </head>
 
