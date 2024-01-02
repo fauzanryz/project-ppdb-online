@@ -187,9 +187,8 @@
 
   <!-- Main Footer -->
   <footer class="main-footer text-center">
-    <!-- To the right -->
     <!-- Default to the left -->
-    <strong> &copy; MTsN 4 Tanah Laut</strong>
+    <strong>Copyright &copy; 2023 MTsN 4 Tanah Laut.</strong>
   </footer>
   </div>
   <!-- ./wrapper -->
