@@ -219,7 +219,7 @@
                             <div class="col">
                                 <label class="col-form-label">Agama Wali</label>
                                 <select name="agamaWali" id="inputState" class="form-control">
-                                    <option disabled selected>--Pilih Agama--</option>
+                                    <option value="">--Pilih Agama--</option>
                                     <option value="Islam" <?= ($dftr['agamaWali'] == 'Islam') ? 'selected' : ''; ?>>Islam</option>
                                     <option value="Kristen" <?= ($dftr['agamaWali'] == 'Kristen') ? 'selected' : ''; ?>>Kristen</option>
                                     <option value="Katolik" <?= ($dftr['agamaWali'] == 'Katolik') ? 'selected' : ''; ?>>Katolik</option>

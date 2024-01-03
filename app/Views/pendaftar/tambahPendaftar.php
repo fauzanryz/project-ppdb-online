@@ -216,7 +216,7 @@
 							<div class="col">
 								<label class="col-form-label">Agama Wali</label>
 								<select name="agamaWali" id="inputState" class="form-control" required>
-									<option disabled selected>--Pilih Agama--</option>
+									<option value="">--Pilih Agama--</option>
 									<option value="Islam">Islam</option>
 									<option value="Kristen">Kristen</option>
 									<option value="Katolik">Katolik</option>

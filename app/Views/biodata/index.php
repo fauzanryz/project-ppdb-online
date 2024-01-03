@@ -291,7 +291,7 @@ if ($status_pendaftar == "sudah_mendaftar" || $status_pendaftar == "sudah_final"
                             <div class="col">
                                 <label class="col-form-label">Agama Wali</label>
                                 <select name="agamaWali" id="inputState" class="form-control" <?= ($status_pendaftar == "sudah_final") ? "disabled" : null; ?>>
-                                    <option disabled selected>--Pilih Agama--</option>
+                                    <option selected value="">--Pilih Agama--</option>
                                     <option value="Islam" <?= ($agamaWali == 'Islam') ? 'selected' : ''; ?>>Islam</option>
                                     <option value="Kristen" <?= ($agamaWali == 'Kristen') ? 'selected' : ''; ?>>Kristen</option>
                                     <option value="Katolik" <?= ($agamaWali == 'Katolik') ? 'selected' : ''; ?>>Katolik</option>
