@@ -169,7 +169,7 @@
               <!-- Ensure the 'Keluar' link is not part of the treeview -->
               <li class="nav-item">
                 <a href="<?= base_url('logout'); ?>" class="nav-link">
-                  <i class="nav-icon fas fa-arrow-left"></i>
+                  <i class="nav-icon fas fa-sign-out-alt"></i>
                   <p>Keluar</p>
                 </a>
               </li>
@@ -195,7 +195,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?= base_url('logout'); ?>" class="nav-link">
-                  <i class="nav-icon fas fa-arrow-left"></i>
+                  <i class="nav-icon fas fa-sign-out-alt"></i>
                   <p>
                     Keluar
                   </p>
